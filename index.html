@@ -122,39 +122,35 @@
         <link href="css/style.css" rel="stylesheet">
 <style>
 
-/* === SAFE MOBILE OVERFLOW FIX (NO LAYOUT CHANGES) === */
+/* === FULL WIDTH + PERFECT CENTERING FIX === */
 
 html, body {
     width: 100%;
-    max-width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden !important;
-}
-
-/* Stop horizontal scroll caused by any element */
-* {
-    max-width: 100vw;
-    box-sizing: border-box;
-}
-
-/* Ensure media never breaks layout */
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Prevent containers from pushing right side space */
-.container,
-.container-fluid,
-.row,
-section {
-    max-width: 100%;
-}
-
-/* Only prevent sideways overflow, do NOT change positioning */
-body {
     overflow-x: hidden;
+}
+
+/* Ensure full screen usage */
+body {
+    min-width: 100%;
+    width: 100%;
+    position: relative;
+}
+
+/* Center containers properly without breaking layout */
+.container,
+.container-fluid {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Optional safe centering for inner sections */
+section, div {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 </style>
