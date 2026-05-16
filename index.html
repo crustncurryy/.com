@@ -120,9 +120,9 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
-   <style>
+<style>
 
-/* === FULL WIDTH MOBILE FIT (NO LAYOUT CHANGE) === */
+/* === FULL MOBILE FIT + CENTERED CONTENT FIX === */
 
 html, body {
     width: 100%;
@@ -131,22 +131,45 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Make body always fill screen properly */
+/* Keep full width but ensure clean alignment */
 body {
     min-width: 100%;
-    width: 100%;
+    text-align: center; /* helps center inline content */
 }
 
-/* Prevent accidental side gap on right */
-body {
-    position: relative;
-}
-
-/* Ensure containers don’t leave right space */
-.container,
-.container-fluid {
-    width: 100%;
+/* Make all blocks fit screen properly */
+* {
     max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Media always responsive */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure containers don’t push content outside */
+.container,
+.container-fluid,
+section,
+div {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Force readable wrapping */
+body * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+    body {
+        text-align: center;
+    }
 }
 
 </style>
