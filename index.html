@@ -2621,15 +2621,17 @@ body.cnc-menu-open {
                                  loading="eager">
 
 
+                        </div>
+
                             <div class="cnc-image-badge">
 
                                 🔥 Freshly Prepared • Every Order
 
                             </div>
 
-                        </div>
-
+                         
                     </div>
+                    
 
                 </div>
 
@@ -2747,14 +2749,14 @@ body.cnc-menu-open {
                                  loading="lazy">
 
 
+
+                        </div>
+
                             <div class="cnc-image-badge">
 
                                 ⭐ Local Favourite • Teesside
 
                             </div>
-
-                        </div>
-
                     </div>
 
                 </div>
@@ -2909,271 +2911,389 @@ body.cnc-menu-open {
      END
 ========================================================= -->
 ```
-        <!-- Carousel End -->
-            <div style="
-    width:100%;
-    overflow:hidden;
-    padding:18px 0;
-">
+    <!-- =========================================================
+     CRUST N CURRY — ZERO GAP FOOD MARQUEE
+========================================================= -->
 
-<!-- TRACK WRAPPER -->
-<div style="
-    width:100%;
-    padding:55px 0;
-    background:linear-gradient(145deg,#0b0b0b,#141414);
-    border-top:1px solid rgba(255,140,0,0.15);
-    border-bottom:1px solid rgba(255,140,0,0.15);
-    overflow:hidden;
-    position:relative;
-    box-shadow:0 20px 60px rgba(0,0,0,0.35);
-">
+<div id="cncFoodMarquee"
+     style="
+        width:100%;
+        height:auto;
+        margin:0 !important;
+        padding:0 !important;
+        display:block;
+        position:relative;
+        top:0;
+        overflow:hidden;
+        background:#24070b;
+        line-height:1;
+        font-size:0;
+     ">
 
-<!-- MARQUEE TRACK -->
-<div style="
+    <div class="cnc-food-track">
+
+        <!-- FIRST SET -->
+
+        <div class="cnc-food-item">🍕 Fresh Oven-Baked Pizza</div>
+        <div class="cnc-food-item">🍔 Juicy Flame-Grilled Burgers</div>
+        <div class="cnc-food-item">🌯 Signature Doner Kebabs</div>
+        <div class="cnc-food-item">🍟 Crispy Golden Chips</div>
+        <div class="cnc-food-item">🥘 Rich & Creamy Curries</div>
+        <div class="cnc-food-item">🫓 Fresh Tandoori Naan</div>
+        <div class="cnc-food-item">🔥 Hot & Fresh Every Order</div>
+        <div class="cnc-food-item">🌯 Loaded Wraps</div>
+        <div class="cnc-food-item">🧀 Creamy Parmesan Specials</div>
+        <div class="cnc-food-item">⭐ Customer Favourite</div>
+
+        <!-- SECOND SET -->
+
+        <div class="cnc-food-item">🍕 Fresh Oven-Baked Pizza</div>
+        <div class="cnc-food-item">🍔 Juicy Flame-Grilled Burgers</div>
+        <div class="cnc-food-item">🌯 Signature Doner Kebabs</div>
+        <div class="cnc-food-item">🍟 Crispy Golden Chips</div>
+        <div class="cnc-food-item">🥘 Rich & Creamy Curries</div>
+        <div class="cnc-food-item">🫓 Fresh Tandoori Naan</div>
+        <div class="cnc-food-item">🔥 Hot & Fresh Every Order</div>
+        <div class="cnc-food-item">🌯 Loaded Wraps</div>
+        <div class="cnc-food-item">🧀 Creamy Parmesan Specials</div>
+        <div class="cnc-food-item">⭐ Customer Favourite</div>
+
+    </div>
+</div>
+
+
+<style>
+
+/* =========================================================
+   FORCE REMOVE BOOTSTRAP / TEMPLATE SPACING
+========================================================= */
+
+#cncFoodMarquee,
+#cncFoodMarquee * {
+
+    box-sizing:border-box;
+
+}
+
+
+/* Remove spacing caused by surrounding Bootstrap elements */
+
+#cncFoodMarquee {
+
+    margin-top:-1px !important;
+
+    margin-bottom:0 !important;
+
+    padding-top:0 !important;
+
+    padding-bottom:0 !important;
+
+}
+
+
+/* If your carousel immediately comes before it */
+
+.carousel + #cncFoodMarquee {
+
+    margin-top:-1px !important;
+
+}
+
+
+/* Remove common Bootstrap spacing */
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+
+    margin-bottom:0 !important;
+
+    padding-bottom:0 !important;
+
+}
+
+
+/* Remove empty line / inherited line height */
+
+#cncFoodMarquee::before,
+#cncFoodMarquee::after {
+
+    content:none !important;
+
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+#cncFoodMarquee .cnc-food-track {
+
     display:flex;
+
+    align-items:center;
+
     width:max-content;
-    gap:16px;
-    animation:marqueeLoop 30s linear infinite;
-    padding-left:10px;
-">
 
-  <!-- ITEM TEMPLATE (LUXURY ORANGE + BLACK STYLE) -->
+    gap:10px;
 
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
+    margin:0 !important;
 
-      background:linear-gradient(135deg,#ff6a00,#1a1a1a);
-      box-shadow:0 0 18px rgba(255,106,0,0.25);
-      border:1px solid rgba(255,140,0,0.25);
-  ">
-    🍕 Fresh Oven-Baked Pizza Everyday
-  </div>
+    padding:
+        8px
+        0 !important;
 
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
+    line-height:1;
 
-      background:linear-gradient(135deg,#ff8c00,#111);
-      box-shadow:0 0 18px rgba(255,140,0,0.22);
-  ">
-    🍔 Juicy Flame-Grilled Burgers
-  </div>
+    will-change:transform;
 
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
+    transform:translate3d(0,0,0);
 
-      background:linear-gradient(135deg,#ff5a1f,#000);
-      box-shadow:0 0 18px rgba(255,90,31,0.22);
-  ">
-    🌯 Signature Doner Kebabs
-  </div>
+    animation:
+        cncFoodMove
+        30s
+        linear
+        infinite;
 
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
-
-      background:linear-gradient(135deg,#ff7a1a,#0a0a0a);
-      box-shadow:0 0 18px rgba(255,122,26,0.22);
-  ">
-    🍟 Crispy Golden Chips
-  </div>
-
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
-
-      background:linear-gradient(135deg,#e65100,#111);
-  ">
-    🥘 Rich & Creamy Curries
-  </div>
-
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
-
-      background:linear-gradient(135deg,#ff6d00,#000);
-  ">
-    🫓 Fresh Tandoori Naan
-  </div>
-
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
-
-      background:linear-gradient(135deg,#ff3d00,#1a1a1a);
-  ">
-    🔥 Hot & Fresh Every Order
-  </div>
-
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
-
-      background:linear-gradient(135deg,#ff6a00,#0d0d0d);
-  ">
-    🌯 Loaded Wraps Full of Flavor
-  </div>
-
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
-
-      background:linear-gradient(135deg,#ff8f00,#111);
-  ">
-    🧀 Creamy Parmesan Specials
-  </div>
-
-  <div style="
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:11px 18px;
-      border-radius:50px;
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
-
-      background:linear-gradient(135deg,#ff5722,#000);
-  ">
-    ⭐ Customer Favorite Fast Food Spot
-  </div>
-
-</div>
-</div>
-
-<!-- ANIMATION -->
-<style>
-@keyframes marqueeLoop {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
 }
+
+
+/* =========================================================
+   ITEMS
+========================================================= */
+
+#cncFoodMarquee .cnc-food-item {
+
+    flex:
+        0 0 auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:38px;
+
+    padding:
+        0
+        15px;
+
+    margin:0 !important;
+
+    border-radius:50px;
+
+    white-space:nowrap;
+
+    color:#fff;
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    line-height:1;
+
+    background:
+        linear-gradient(
+            135deg,
+            #68121d,
+            #27070b
+        );
+
+    border:
+        1px solid
+        rgba(228,165,43,.25);
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,.18);
+
+}
+
+
+/* =========================================================
+   SMOOTH LOOP
+========================================================= */
+
+@keyframes cncFoodMove {
+
+    0% {
+
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(-50%,0,0);
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width:992px) {
+
+    #cncFoodMarquee .cnc-food-track {
+
+        padding:
+            9px
+            0 !important;
+
+        gap:12px;
+
+        animation-duration:
+            32s;
+
+    }
+
+    #cncFoodMarquee .cnc-food-item {
+
+        height:40px;
+
+        padding:
+            0
+            17px;
+
+        font-size:12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width:576px)
+       and (max-width:991px) {
+
+    #cncFoodMarquee .cnc-food-track {
+
+        padding:
+            7px
+            0 !important;
+
+        gap:8px;
+
+        animation-duration:
+            27s;
+
+    }
+
+    #cncFoodMarquee .cnc-food-item {
+
+        height:35px;
+
+        padding:
+            0
+            12px;
+
+        font-size:10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:575px) {
+
+    #cncFoodMarquee .cnc-food-track {
+
+        padding:
+            6px
+            0 !important;
+
+        gap:7px;
+
+        animation-duration:
+            23s;
+
+    }
+
+    #cncFoodMarquee .cnc-food-item {
+
+        height:32px;
+
+        padding:
+            0
+            10px;
+
+        font-size:9px;
+
+        border-radius:30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width:380px) {
+
+    #cncFoodMarquee .cnc-food-track {
+
+        padding:
+            5px
+            0 !important;
+
+        gap:6px;
+
+        animation-duration:
+            21s;
+
+    }
+
+    #cncFoodMarquee .cnc-food-item {
+
+        height:30px;
+
+        padding:
+            0
+            9px;
+
+        font-size:8px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion:reduce) {
+
+    #cncFoodMarquee .cnc-food-track {
+
+        animation:none !important;
+
+    }
+
+}
+
 </style>
 
-<!-- Premium soft glow layers -->
-<div style="
-    position:absolute;
-    top:-150px;
-    left:-150px;
-    width:350px;
-    height:350px;
-    background:#f0eae9;
-    opacity:0.05;
-    border-radius:80px;
-    transform:rotate(25deg);
-"></div>
-
-<div style="
-    position:absolute;
-    bottom:-160px;
-    right:-160px;
-    width:380px;
-    height:380px;
-    background:#1a1a1a;
-    opacity:0.05;
-    border-radius:90px;
-    transform:rotate(-18deg);
-"></div>
-
-<!-- HEADER -->
-<div style="text-align:center;margin-bottom:3px;">
-
-<div style="
-    text-align:center;
-    padding:9px 9px;
-    background:linear-gradient(135deg,#ffffff,#fff6f2);
-    position:relative;
-    overflow:hidden;
-    width:auto;
-    font-family:'Poppins',Arial,sans-serif;
-">
-
-<!-- soft glow -->
-<div style="
-    position:absolute;
-    top:-140px;
-    left:-140px;
-    width:280px;
-    height:280px;
-    background:#bf2a10;
-    opacity:0.06;
-    border-radius:50%;
-    filter:blur(50px);
-"></div>
-
-<div style="
-    position:absolute;
-    bottom:-140px;
-    right:-140px;
-    width:300px;
-    height:300px;
-    background:#1a1a1a;
-    opacity:0.05;
-    border-radius:50%;
-    filter:blur(50px);
-"></div>
-
-<style>
-@keyframes shineMove {
-  0% { left: -120%; }
-  100% { left: 120%; }
-}
-</style>
 
 <!-- PREMIUM HERO + SERVICES SECTION -->
 
@@ -3335,47 +3455,57 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
 </div>
 
-<!-- SERVICES SECTION -->
 
-<div style="
-width:100%;
-padding:70px 5%;
-background:#fff;
-font-family:'Poppins',sans-serif;
-">
+<div id="cnc-services-section"
+     style="
+        width:100%;
+        margin:0;
+        padding:clamp(50px,7vw,90px) 0;
+        background:#ffffff;
+        font-family:'Poppins',Arial,sans-serif;
+        overflow:hidden;
+        box-sizing:border-box;
+     ">
 
     <!-- SECTION HEADER -->
 
     <div style="
-    text-align:center;
-    max-width:850px;
-    margin:auto auto 60px auto;
+        width:100%;
+        max-width:900px;
+        margin:0 auto;
+        padding:0 20px;
+        text-align:center;
+        box-sizing:border-box;
     ">
 
         <span style="
-        color:#ff4d2e;
-        font-weight:800;
-        letter-spacing:2px;
-        font-size:13px;
+            display:inline-block;
+            color:#b3001b;
+            font-weight:800;
+            letter-spacing:2px;
+            font-size:clamp(10px,1.2vw,13px);
+            line-height:1.4;
         ">
             PREMIUM FOOD SELECTION
         </span>
 
         <h2 style="
-        font-size:clamp(36px,5vw,58px);
-        color:#111;
-        margin-top:18px;
-        margin-bottom:20px;
-        line-height:1.15;
-        font-weight:900;
+            font-size:clamp(32px,5vw,58px);
+            color:#111;
+            margin:15px 0 18px 0;
+            line-height:1.12;
+            font-weight:900;
+            letter-spacing:-1px;
         ">
             Crafted Fresh For Every Craving
         </h2>
 
         <p style="
-        color:#666;
-        font-size:18px;
-        line-height:2;
+            max-width:760px;
+            margin:0 auto;
+            color:#666;
+            font-size:clamp(14px,1.5vw,18px);
+            line-height:1.8;
         ">
             Discover freshly prepared takeaway favourites made with
             premium ingredients, rich flavours and modern comfort food quality.
@@ -3383,411 +3513,620 @@ font-family:'Poppins',sans-serif;
 
     </div>
 
- 
 
-  <div style="max-width:900px; margin:30px auto 0;">
-<!-- SERVICES SECTION -->
+    <!-- SERVICES GRID -->
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-gap:35px;
-padding:60px 5%;
-background:#ffffff;
-">
+    <div id="cnc-services-grid"
+         style="
+            width:100%;
+            max-width:1400px;
+            margin:55px auto 0 auto;
+            padding:0 24px;
+            display:grid;
+            grid-template-columns:repeat(2,minmax(0,1fr));
+            gap:30px;
+            box-sizing:border-box;
+         ">
 
-  <!-- PIZZA -->
-  <div style="
-  background:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 15px 45px rgba(0,0,0,0.08);
-  transition:0.4s;
-  border:1px solid rgba(0,0,0,0.05);
-  ">
 
-    <div style="
-    position:relative;
-    width:100%;
-    height:420px;
-    overflow:hidden;
-    ">
+        <!-- =================================================
+             PIZZA
+        ================================================== -->
 
-      <a href="menu.html">
+        <div class="cnc-service-card"
+             style="
+                width:100%;
+                min-width:0;
+                background:#fff;
+                border-radius:24px;
+                overflow:hidden;
+                border:1px solid rgba(0,0,0,.06);
+                box-shadow:0 15px 45px rgba(0,0,0,.08);
+                transition:transform .35s ease,box-shadow .35s ease;
+             ">
 
-        <img src="gallery-1.jpg"
-        alt="Fresh Pizza"
-        style="
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        display:block;
-        transition:0.5s;
-        ">
+            <div style="
+                position:relative;
+                width:100%;
+                height:clamp(280px,32vw,420px);
+                overflow:hidden;
+                background:#f5f5f5;
+            ">
 
-      </a>
+                <a href="menu.html"
+                   style="
+                    display:block;
+                    width:100%;
+                    height:100%;
+                ">
 
-      <div style="
-      position:absolute;
-      bottom:20px;
-      left:20px;
-      background:#b3001b;
-      color:white;
-      padding:12px 22px;
-      border-radius:50px;
-      font-size:14px;
-      font-weight:700;
-      letter-spacing:1px;
-      backdrop-filter:blur(10px);
-      ">
-        Fresh Stone-Baked Pizza
-      </div>
+                    <img src="gallery-1.jpg"
+                         alt="Fresh Pizza"
+                         loading="lazy"
+                         style="
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                            object-position:center;
+                            display:block;
+                            transition:transform .6s ease;
+                         ">
+
+                </a>
+
+                <div style="
+                    position:absolute;
+                    left:18px;
+                    bottom:18px;
+                    max-width:calc(100% - 36px);
+                    background:rgba(179,0,27,.96);
+                    color:#fff;
+                    padding:11px 18px;
+                    border-radius:50px;
+                    font-size:clamp(10px,1.2vw,14px);
+                    line-height:1.3;
+                    font-weight:700;
+                    letter-spacing:.4px;
+                    box-shadow:0 8px 20px rgba(0,0,0,.18);
+                    box-sizing:border-box;
+                ">
+                    Fresh Stone-Baked Pizza
+                </div>
+
+            </div>
+
+
+            <div style="
+                padding:clamp(24px,3vw,35px);
+            ">
+
+                <h2 style="
+                    font-size:clamp(25px,3vw,34px);
+                    color:#111;
+                    margin:0 0 14px 0;
+                    font-weight:800;
+                    line-height:1.2;
+                ">
+                    🍕 Pizza
+                </h2>
+
+                <p style="
+                    color:#555;
+                    font-size:clamp(14px,1.4vw,17px);
+                    line-height:1.8;
+                    margin:0 0 24px 0;
+                ">
+                    Freshly baked pizzas loaded with rich tomato sauce,
+                    melted mozzarella cheese and premium toppings.
+                    Crafted for bold flavour, crispy crusts.
+                </p>
+
+                <a href="menu.html"
+                   style="
+                    display:inline-flex;
+                    align-items:center;
+                    justify-content:center;
+                    min-height:48px;
+                    background:#111;
+                    color:#fff;
+                    text-decoration:none;
+                    padding:12px 26px;
+                    border-radius:12px;
+                    font-size:14px;
+                    font-weight:700;
+                    transition:all .3s ease;
+                    box-sizing:border-box;
+                ">
+                    Explore Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BURGERS
+        ================================================== -->
+
+        <div class="cnc-service-card"
+             style="
+                width:100%;
+                min-width:0;
+                background:#fff;
+                border-radius:24px;
+                overflow:hidden;
+                border:1px solid rgba(0,0,0,.06);
+                box-shadow:0 15px 45px rgba(0,0,0,.08);
+                transition:transform .35s ease,box-shadow .35s ease;
+             ">
+
+            <div style="
+                position:relative;
+                width:100%;
+                height:clamp(280px,32vw,420px);
+                overflow:hidden;
+                background:#f5f5f5;
+            ">
+
+                <a href="menu.html"
+                   style="
+                    display:block;
+                    width:100%;
+                    height:100%;
+                ">
+
+                    <img src="gallery-2.jpg"
+                         alt="Juicy Burgers"
+                         loading="lazy"
+                         style="
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                            object-position:center;
+                            display:block;
+                            transition:transform .6s ease;
+                         ">
+
+                </a>
+
+                <div style="
+                    position:absolute;
+                    left:18px;
+                    bottom:18px;
+                    max-width:calc(100% - 36px);
+                    background:rgba(179,0,27,.96);
+                    color:#fff;
+                    padding:11px 18px;
+                    border-radius:50px;
+                    font-size:clamp(10px,1.2vw,14px);
+                    line-height:1.3;
+                    font-weight:700;
+                    letter-spacing:.4px;
+                    box-shadow:0 8px 20px rgba(0,0,0,.18);
+                    box-sizing:border-box;
+                ">
+                    Juicy Flame Grilled Burgers
+                </div>
+
+            </div>
+
+
+            <div style="
+                padding:clamp(24px,3vw,35px);
+            ">
+
+                <h2 style="
+                    font-size:clamp(25px,3vw,34px);
+                    color:#111;
+                    margin:0 0 14px 0;
+                    font-weight:800;
+                    line-height:1.2;
+                ">
+                    🍔 Burgers
+                </h2>
+
+                <p style="
+                    color:#555;
+                    font-size:clamp(14px,1.4vw,17px);
+                    line-height:1.8;
+                    margin:0 0 24px 0;
+                ">
+                    Gourmet burgers prepared with juicy patties,
+                    fresh buns, melted cheese and signature sauces
+                    for the ultimate comfort food experience.
+                </p>
+
+                <a href="menu.html"
+                   style="
+                    display:inline-flex;
+                    align-items:center;
+                    justify-content:center;
+                    min-height:48px;
+                    background:#111;
+                    color:#fff;
+                    text-decoration:none;
+                    padding:12px 26px;
+                    border-radius:12px;
+                    font-size:14px;
+                    font-weight:700;
+                    transition:all .3s ease;
+                    box-sizing:border-box;
+                ">
+                    Explore Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CHIPS
+        ================================================== -->
+
+        <div class="cnc-service-card"
+             style="
+                width:100%;
+                min-width:0;
+                background:#fff;
+                border-radius:24px;
+                overflow:hidden;
+                border:1px solid rgba(0,0,0,.06);
+                box-shadow:0 15px 45px rgba(0,0,0,.08);
+                transition:transform .35s ease,box-shadow .35s ease;
+             ">
+
+            <div style="
+                position:relative;
+                width:100%;
+                height:clamp(280px,32vw,420px);
+                overflow:hidden;
+                background:#f5f5f5;
+            ">
+
+                <a href="menu.html"
+                   style="
+                    display:block;
+                    width:100%;
+                    height:100%;
+                ">
+
+                    <img src="gallery-3.jpg"
+                         alt="Crispy Chips"
+                         loading="lazy"
+                         style="
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                            object-position:center;
+                            display:block;
+                            transition:transform .6s ease;
+                         ">
+
+                </a>
+
+                <div style="
+                    position:absolute;
+                    left:18px;
+                    bottom:18px;
+                    max-width:calc(100% - 36px);
+                    background:rgba(179,0,27,.96);
+                    color:#fff;
+                    padding:11px 18px;
+                    border-radius:50px;
+                    font-size:clamp(10px,1.2vw,14px);
+                    line-height:1.3;
+                    font-weight:700;
+                    letter-spacing:.4px;
+                    box-shadow:0 8px 20px rgba(0,0,0,.18);
+                    box-sizing:border-box;
+                ">
+                    Golden Crispy Fries
+                </div>
+
+            </div>
+
+
+            <div style="
+                padding:clamp(24px,3vw,35px);
+            ">
+
+                <h2 style="
+                    font-size:clamp(25px,3vw,34px);
+                    color:#111;
+                    margin:0 0 14px 0;
+                    font-weight:800;
+                    line-height:1.2;
+                ">
+                    🍟 Chips
+                </h2>
+
+                <p style="
+                    color:#555;
+                    font-size:clamp(14px,1.4vw,17px);
+                    line-height:1.8;
+                    margin:0 0 24px 0;
+                ">
+                    Perfectly crispy fries seasoned with bold flavours
+                    and served hot for the ideal side or snack.
+                </p>
+
+                <a href="menu.html"
+                   style="
+                    display:inline-flex;
+                    align-items:center;
+                    justify-content:center;
+                    min-height:48px;
+                    background:#111;
+                    color:#fff;
+                    text-decoration:none;
+                    padding:12px 26px;
+                    border-radius:12px;
+                    font-size:14px;
+                    font-weight:700;
+                    transition:all .3s ease;
+                    box-sizing:border-box;
+                ">
+                    Explore Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DONER KEBAB
+        ================================================== -->
+
+        <div class="cnc-service-card"
+             style="
+                width:100%;
+                min-width:0;
+                background:#fff;
+                border-radius:24px;
+                overflow:hidden;
+                border:1px solid rgba(0,0,0,.06);
+                box-shadow:0 15px 45px rgba(0,0,0,.08);
+                transition:transform .35s ease,box-shadow .35s ease;
+             ">
+
+            <div style="
+                position:relative;
+                width:100%;
+                height:clamp(280px,32vw,420px);
+                overflow:hidden;
+                background:#f5f5f5;
+            ">
+
+                <a href="menu.html"
+                   style="
+                    display:block;
+                    width:100%;
+                    height:100%;
+                ">
+
+                    <img src="gallery-4.jpg"
+                         alt="Doner Kebab"
+                         loading="lazy"
+                         style="
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                            object-position:center;
+                            display:block;
+                            transition:transform .6s ease;
+                         ">
+
+                </a>
+
+                <div style="
+                    position:absolute;
+                    left:18px;
+                    bottom:18px;
+                    max-width:calc(100% - 36px);
+                    background:rgba(179,0,27,.96);
+                    color:#fff;
+                    padding:11px 18px;
+                    border-radius:50px;
+                    font-size:clamp(10px,1.2vw,14px);
+                    line-height:1.3;
+                    font-weight:700;
+                    letter-spacing:.4px;
+                    box-shadow:0 8px 20px rgba(0,0,0,.18);
+                    box-sizing:border-box;
+                ">
+                    Juicy Doner Kebab Wraps
+                </div>
+
+            </div>
+
+
+            <div style="
+                padding:clamp(24px,3vw,35px);
+            ">
+
+                <h2 style="
+                    font-size:clamp(25px,3vw,34px);
+                    color:#111;
+                    margin:0 0 14px 0;
+                    font-weight:800;
+                    line-height:1.2;
+                ">
+                    🥙 Doner Kebab
+                </h2>
+
+                <p style="
+                    color:#555;
+                    font-size:clamp(14px,1.4vw,17px);
+                    line-height:1.8;
+                    margin:0 0 24px 0;
+                ">
+                    Tender grilled meat wrapped with fresh salad,
+                    soft bread and delicious sauces for bold flavour
+                    in every bite.
+                </p>
+
+                <a href="menu.html"
+                   style="
+                    display:inline-flex;
+                    align-items:center;
+                    justify-content:center;
+                    min-height:48px;
+                    background:#111;
+                    color:#fff;
+                    text-decoration:none;
+                    padding:12px 26px;
+                    border-radius:12px;
+                    font-size:14px;
+                    font-weight:700;
+                    transition:all .3s ease;
+                    box-sizing:border-box;
+                ">
+                    Explore Menu
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
-
-    <div style="padding:35px;">
-
-      <h2 style="
-      font-size:34px;
-      color:#111;
-      margin-bottom:20px;
-      font-weight:800;
-      ">
-        🍕 Pizza
-      </h2>
-
-      <p style="
-      color:#555;
-      font-size:17px;
-      line-height:2;
-      margin-bottom:25px;
-      ">
-        Freshly baked pizzas loaded with rich tomato sauce,
-        melted mozzarella cheese and premium toppings.
-        Crafted for bold flavour, crispy crusts.
-      </p>
-
-      <a href="menu.html"
-      style="
-      display:inline-block;
-      background:#111;
-      color:white;
-      text-decoration:none;
-      padding:15px 32px;
-      border-radius:12px;
-      font-weight:700;
-      transition:0.3s;
-      ">
-        Explore Menu
-      </a>
-
-    </div>
-
-  </div>
-
-  <!-- BURGERS -->
-  <div style="
-  background:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 15px 45px rgba(0,0,0,0.08);
-  transition:0.4s;
-  border:1px solid rgba(0,0,0,0.05);
-  ">
-
-    <div style="
-    position:relative;
-    width:100%;
-    height:420px;
-    overflow:hidden;
-    ">
-
-      <a href="menu.html">
-
-        <img src="gallery-2.jpg"
-        alt="Juicy Burgers"
-        style="
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        display:block;
-        ">
-
-      </a>
-
-      <div style="
-      position:absolute;
-      bottom:20px;
-      left:20px;
-      background:#b3001b;
-      color:white;
-      padding:12px 22px;
-      border-radius:50px;
-      font-size:14px;
-      font-weight:700;
-      letter-spacing:1px;
-      ">
-        Juicy Flame Grilled Burgers
-      </div>
-
-    </div>
-
-    <div style="padding:35px;">
-
-      <h2 style="
-      font-size:34px;
-      color:#111;
-      margin-bottom:20px;
-      font-weight:800;
-      ">
-        🍔 Burgers
-      </h2>
-
-      <p style="
-      color:#555;
-      font-size:17px;
-      line-height:2;
-      margin-bottom:25px;
-      ">
-        Gourmet burgers prepared with juicy patties,
-        fresh buns, melted cheese and signature sauces
-        for the ultimate comfort food experience.
-      </p>
-
-      <a href="menu.html"
-      style="
-      display:inline-block;
-      background:#111;
-      color:white;
-      text-decoration:none;
-      padding:15px 32px;
-      border-radius:12px;
-      font-weight:700;
-      ">
-        Explore Menu
-      </a>
-
-    </div>
-
-  </div>
-
-  <!-- CHIPS -->
-  <div style="
-  background:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 15px 45px rgba(0,0,0,0.08);
-  border:1px solid rgba(0,0,0,0.05);
-  ">
-
-    <div style="
-    position:relative;
-    width:100%;
-    height:420px;
-    overflow:hidden;
-    ">
-
-      <a href="menu.html">
-
-        <img src="gallery-3.jpg"
-        alt="Crispy Chips"
-        style="
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        display:block;
-        ">
-
-      </a>
-
-      <div style="
-      position:absolute;
-      bottom:20px;
-      left:20px;
-      background:#b3001b;
-      color:white;
-      padding:12px 22px;
-      border-radius:50px;
-      font-size:14px;
-      font-weight:700;
-      letter-spacing:1px;
-      ">
-        Golden Crispy Fries
-      </div>
-
-    </div>
-
-    <div style="padding:35px;">
-
-      <h2 style="
-      font-size:34px;
-      color:#111;
-      margin-bottom:20px;
-      font-weight:800;
-      ">
-        🍟 Chips
-      </h2>
-
-      <p style="
-      color:#555;
-      font-size:17px;
-      line-height:2;
-      margin-bottom:25px;
-      ">
-        Perfectly crispy fries seasoned with bold flavours
-        and served hot for the ideal side or snack.
-      </p>
-
-      <a href="menu.html"
-      style="
-      display:inline-block;
-      background:#111;
-      color:white;
-      text-decoration:none;
-      padding:15px 32px;
-      border-radius:12px;
-      font-weight:700;
-      ">
-        Explore Menu
-      </a>
-
-    </div>
-
-  </div>
-
-  <!-- DONER KEBAB -->
-  <div style="
-  background:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 15px 45px rgba(0,0,0,0.08);
-  border:1px solid rgba(0,0,0,0.05);
-  ">
-
-    <div style="
-    position:relative;
-    width:100%;
-    height:420px;
-    overflow:hidden;
-    ">
-
-      <a href="menu.html">
-
-        <img src="gallery-4.jpg"
-        alt="Doner Kebab"
-        style="
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        display:block;
-        ">
-
-      </a>
-
-      <div style="
-      position:absolute;
-      bottom:20px;
-      left:20px;
-      background:#b3001b;
-      color:white;
-      padding:12px 22px;
-      border-radius:50px;
-      font-size:14px;
-      font-weight:700;
-      letter-spacing:1px;
-      ">
-        Juicy Doner Kebab Wraps
-      </div>
-
-    </div>
-
-    <div style="padding:35px;">
-
-      <h2 style="
-      font-size:34px;
-      color:#111;
-      margin-bottom:20px;
-      font-weight:800;
-      ">
-        🥙 Doner Kebab
-      </h2>
-
-      <p style="
-      color:#555;
-      font-size:17px;
-      line-height:2;
-      margin-bottom:25px;
-      ">
-        Tender grilled meat wrapped with fresh salad,
-        soft bread and delicious sauces for bold flavour
-        in every bite.
-      </p>
-
-      <a href="menu.html"
-      style="
-      display:inline-block;
-      background:#111;
-      color:white;
-      text-decoration:none;
-      padding:15px 32px;
-      border-radius:12px;
-      font-weight:700;
-      ">
-        Explore Menu
-      </a>
-
-    </div>
-
-  </div>
 
 </div>
-</div>
-</div>
-</div>
 
-<script>
 
-const titles = [
-    "Flame-Grilled Burgers & Crispy Chicken",
-    "Bold Spices, Fresh Taste Every Bite",
-    "Stone-Baked Pizza & Loaded Burgers",
-    "Hot, Juicy & Freshly Prepared Meals",
-    "Premium Takeaway Crafted Daily"
-];
+<!-- =========================================================
+     RESPONSIVE BEHAVIOUR
+========================================================= -->
 
-const subtitles = [
-    "Enjoy freshly prepared burgers, wraps, fries and flavour-packed takeaway favourites made with premium ingredients.",
-    "We blend rich spices and modern comfort food to create unforgettable flavours in every meal.",
-    "Freshly baked pizzas, loaded burgers and authentic curries served hot and full of flavour.",
-    "Every order is freshly cooked to deliver crispy textures, bold taste and premium takeaway quality.",
-    "From quick snacks to full family meals, every dish is designed for comfort, freshness and flavour."
-];
+<style>
 
-let i = 0;
+/* Prevent page-wide horizontal scrolling */
+html,
+body {
+    max-width:100%;
+    overflow-x:hidden;
+}
 
-setInterval(() => {
 
-    const title = document.getElementById("heroTitle");
-    const sub = document.getElementById("heroSub");
+/* Card hover on desktop */
+@media (min-width:768px) {
 
-    title.style.opacity = "0";
-    sub.style.opacity = "0";
+    #cnc-services-section .cnc-service-card:hover {
 
-    setTimeout(() => {
+        transform:translateY(-7px);
 
-        i = (i + 1) % titles.length;
+        box-shadow:
+            0 22px 55px
+            rgba(0,0,0,.13);
 
-        title.textContent = titles[i];
-        sub.textContent = subtitles[i];
+    }
 
-        title.style.opacity = "1";
-        sub.style.opacity = "1";
+    #cnc-services-section .cnc-service-card:hover img {
 
-    }, 350);
+        transform:scale(1.045);
 
-}, 3500);
+    }
 
-</script>
+}
+
+
+/* Tablet */
+@media (max-width:767px) {
+
+    #cnc-services-grid {
+
+        grid-template-columns:
+            1fr !important;
+
+        gap:22px !important;
+
+        margin-top:40px !important;
+
+        padding-left:16px !important;
+        padding-right:16px !important;
+
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width:575px) {
+
+    #cnc-services-section {
+
+        padding-top:48px !important;
+        padding-bottom:48px !important;
+
+    }
+
+
+    #cnc-services-section .cnc-service-card {
+
+        border-radius:20px !important;
+
+        box-shadow:
+            0 10px 30px
+            rgba(0,0,0,.07) !important;
+
+    }
+
+
+    #cnc-services-section .cnc-service-card > div:first-child {
+
+        height:290px !important;
+
+    }
+
+
+    #cnc-services-section .cnc-service-card > div:last-child {
+
+        padding:22px !important;
+
+    }
+
+
+    #cnc-services-section a[href="menu.html"] {
+
+        width:100%;
+
+    }
+
+}
+
+
+/* Very small phones */
+@media (max-width:380px) {
+
+    #cnc-services-grid {
+
+        padding-left:12px !important;
+        padding-right:12px !important;
+
+        gap:18px !important;
+
+    }
+
+
+    #cnc-services-section .cnc-service-card > div:first-child {
+
+        height:260px !important;
+
+    }
+
+
+    #cnc-services-section .cnc-service-card > div:last-child {
+
+        padding:19px !important;
+
+    }
+
+}
+
+</style>
+
 
 
 
@@ -4057,287 +4396,393 @@ setInterval(() => {
         </p>
 
     </div>
+<!-- ================= PREMIUM ALLERGY / FOOD SAFETY SECTION ================= -->
+<section style="
+    width:100%;
+    box-sizing:border-box;
+    margin:0;
+    padding:clamp(30px,5vw,70px) clamp(12px,4vw,40px);
+    background:
+        radial-gradient(circle at 10% 20%,rgba(214,0,0,0.06),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(255,150,0,0.05),transparent 30%),
+        #f7f7f7;
+    font-family:'Poppins','Segoe UI',Arial,sans-serif;
+    overflow:hidden;
+">
 
-    <!-- ULTRA PREMIUM ALLERGY SECTION -->
-<div style="width:100%; padding:35px 14px; box-sizing:border-box; background:#f7f7f7; font-family:'Times New Roman', serif;">
-
+    <!-- MAIN PREMIUM CONTAINER -->
     <div style="
-        max-width:1150px;
-        margin:auto;
-        background:#000;
-        border-radius:34px;
-        overflow:hidden;
+        width:100%;
+        max-width:1250px;
+        margin:0 auto;
+        box-sizing:border-box;
         position:relative;
-        box-shadow:0 28px 70px rgba(0,0,0,0.20);
-        border:3px solid #d60000;
+        overflow:hidden;
+        border-radius:clamp(20px,3vw,34px);
+        background:
+            radial-gradient(circle at 100% 0%,rgba(214,0,0,0.16),transparent 32%),
+            radial-gradient(circle at 0% 100%,rgba(255,111,0,0.08),transparent 30%),
+            linear-gradient(145deg,#050505,#111111 55%,#080808);
+        border:1px solid rgba(214,0,0,0.65);
+        box-shadow:
+            0 25px 70px rgba(0,0,0,0.22),
+            0 0 0 1px rgba(255,255,255,0.03) inset;
     ">
 
-        <!-- RED GLOW -->
+        <!-- DECORATIVE GLOW -->
         <div style="
             position:absolute;
-            width:340px;
-            height:340px;
-            background:rgba(214,0,0,0.16);
+            width:320px;
+            height:320px;
+            top:-170px;
+            right:-130px;
             border-radius:50%;
-            top:-120px;
-            right:-120px;
-            filter:blur(25px);
-            z-index:1;
+            background:rgba(214,0,0,0.20);
+            filter:blur(55px);
+            pointer-events:none;
         "></div>
 
-        <!-- CONTENT WRAPPER -->
         <div style="
-            display:flex;
-            flex-wrap:wrap;
-            align-items:stretch;
+            position:absolute;
+            width:250px;
+            height:250px;
+            bottom:-150px;
+            left:-120px;
+            border-radius:50%;
+            background:rgba(255,100,0,0.10);
+            filter:blur(55px);
+            pointer-events:none;
+        "></div>
+
+
+        <!-- CONTENT -->
+        <div style="
             position:relative;
             z-index:2;
+            display:grid;
+            grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+            align-items:stretch;
         ">
 
-            <!-- IMAGE SIDE -->
+            <!-- ================= IMAGE ================= -->
             <div style="
-                flex:1 1 360px;
-                min-height:420px;
-                background:url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=1200&auto=format&fit=crop') center center/cover;
                 position:relative;
+                min-height:520px;
+                overflow:hidden;
+                background:#111;
             ">
 
-                <!-- OVERLAY -->
+                <img
+                    src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=1200&auto=format&fit=crop"
+                    alt="Fresh food prepared at Crust N Curry"
+                    loading="lazy"
+                    style="
+                        width:100%;
+                        height:100%;
+                        min-height:520px;
+                        display:block;
+                        object-fit:cover;
+                        object-position:center;
+                    "
+                >
+
+                <!-- IMAGE OVERLAY -->
                 <div style="
                     position:absolute;
                     inset:0;
-                    background:linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0.18));
+                    background:
+                        linear-gradient(
+                            180deg,
+                            rgba(0,0,0,0.05) 0%,
+                            rgba(0,0,0,0.18) 45%,
+                            rgba(0,0,0,0.88) 100%
+                        );
+                    pointer-events:none;
                 "></div>
 
-                <!-- FLOATING TAG -->
+                <!-- IMAGE LABEL -->
                 <div style="
                     position:absolute;
-                    left:22px;
-                    bottom:22px;
-                    background:rgba(0,0,0,0.75);
-                    backdrop-filter:blur(8px);
-                    border:1px solid rgba(255,255,255,0.08);
-                    padding:14px 18px;
-                    border-radius:18px;
-                    color:#fff;
-                    max-width:250px;
+                    left:clamp(16px,3vw,30px);
+                    right:clamp(16px,3vw,30px);
+                    bottom:clamp(16px,3vw,30px);
+                    box-sizing:border-box;
+                    padding:clamp(15px,2vw,21px);
+                    border-radius:20px;
+                    background:rgba(0,0,0,0.72);
+                    border:1px solid rgba(255,255,255,0.12);
+                    backdrop-filter:blur(14px);
+                    -webkit-backdrop-filter:blur(14px);
+                    box-shadow:0 15px 40px rgba(0,0,0,0.35);
                 ">
 
                     <div style="
-                        font-size:12px;
-                        font-weight:800;
-                        color:#ff3c3c;
-                        letter-spacing:1px;
-                        margin-bottom:5px;
+                        color:#ff3b30;
+                        font-size:11px;
+                        font-weight:900;
+                        letter-spacing:2px;
+                        margin-bottom:7px;
+                        text-transform:uppercase;
                     ">
-                        CUSTOMER SAFETY
+                        Customer Safety
                     </div>
 
                     <div style="
-                        font-size:15px;
-                        line-height:1.6;
+                        color:#fff;
+                        font-size:clamp(14px,1.4vw,17px);
+                        line-height:1.65;
                         font-weight:700;
                     ">
-                        Please inform staff of any allergies before ordering food.
+                        Please inform our staff of any allergies or dietary requirements before ordering.
                     </div>
 
                 </div>
 
             </div>
 
-            <!-- TEXT SIDE -->
+
+            <!-- ================= TEXT CONTENT ================= -->
             <div style="
-                flex:1 1 500px;
-                padding:50px 34px;
                 box-sizing:border-box;
+                padding:clamp(30px,5vw,65px);
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                min-width:0;
             ">
 
-                <!-- SMALL BADGE -->
+                <!-- BADGE -->
                 <div style="
+                    align-self:flex-start;
                     display:inline-flex;
                     align-items:center;
                     gap:8px;
-                    background:#d60000;
+                    box-sizing:border-box;
+                    background:linear-gradient(135deg,#e00000,#b00000);
                     color:#fff;
-                    padding:10px 18px;
-                    border-radius:60px;
-                    font-size:12px;
+                    padding:10px 17px;
+                    border-radius:999px;
+                    font-size:clamp(10px,1vw,12px);
                     font-weight:900;
-                    letter-spacing:1px;
-                    margin-bottom:22px;
-                    box-shadow:0 10px 25px rgba(214,0,0,0.30);
+                    letter-spacing:1.2px;
+                    margin-bottom:20px;
+                    box-shadow:0 10px 25px rgba(214,0,0,0.28);
                 ">
-                    ⚠ IMPORTANT FOOD NOTICE
+                    ⚠️ IMPORTANT FOOD NOTICE
                 </div>
 
-                <!-- MAIN TITLE -->
+
+                <!-- TITLE -->
                 <h2 style="
-                    color:#fff;
-                    font-size:48px;
-                    line-height:1.08;
+                    padding:0;
                     margin:0;
+                    color:#fff;
+                    font-size:clamp(34px,4.5vw,58px);
+                    line-height:1.02;
                     font-weight:900;
+                    letter-spacing:-1.5px;
                     text-transform:uppercase;
-                    letter-spacing:1px;
                 ">
                     Allergy
-                    <span style="color:#d60000;">Information</span>
+                    <span style="
+                        display:inline-block;
+                        color:#e00000;
+                    ">
+                        Information
+                    </span>
                 </h2>
 
-                <!-- LINE -->
+
+                <!-- RED LINE -->
                 <div style="
-                    width:120px;
-                    height:5px;
-                    background:#d60000;
-                    border-radius:40px;
-                    margin:24px 0 24px 0;
-                    box-shadow:0 8px 20px rgba(214,0,0,0.35);
+                    width:clamp(75px,10vw,120px);
+                    height:4px;
+                    margin:22px 0 22px;
+                    border-radius:99px;
+                    background:linear-gradient(90deg,#e00000,#ff7a00);
+                    box-shadow:0 6px 18px rgba(214,0,0,0.35);
                 "></div>
 
-                <!-- PARAGRAPH -->
+
+                <!-- DESCRIPTION -->
                 <p style="
-                    color:rgba(255,255,255,0.90);
-                    font-size:17px;
-                    line-height:2;
-                    margin-bottom:30px;
+                    margin:0 0 28px;
+                    padding:0;
+                    color:rgba(255,255,255,0.78);
+                    font-size:clamp(14px,1.35vw,17px);
+                    line-height:1.85;
+                    max-width:720px;
                 ">
-                    If you have any allergies, food intolerances, or dietary requirements, please let a member of our staff know before placing your order. 
-                    Some dishes may contain or come into contact with allergens including nuts, dairy, eggs, gluten, sesame, and other ingredients.
+                    If you have any allergies, food intolerances, or dietary requirements,
+                    please let a member of our staff know before placing your order.
+                    Some dishes may contain or come into contact with allergens including
+                    nuts, dairy, eggs, gluten, sesame, and other ingredients.
                 </p>
 
-                <!-- PREMIUM INFO GRID -->
+
+                <!-- ================= INFO CARDS ================= -->
                 <div style="
                     display:grid;
-                    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-                    gap:16px;
+                    grid-template-columns:repeat(3,minmax(0,1fr));
+                    gap:14px;
+                    width:100%;
                 ">
 
-                    <!-- CARD -->
-                    <div style="
-                        background:#111;
-                        border-radius:20px;
-                        padding:18px;
-                        border:1px solid rgba(255,255,255,0.08);
-                        box-shadow:0 10px 30px rgba(0,0,0,0.20);
-                    ">
+                    <!-- CARD 1 -->
+                    <div
+                        onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(214,0,0,.55)'"
+                        onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,.08)'"
+                        style="
+                            min-width:0;
+                            box-sizing:border-box;
+                            padding:18px;
+                            border-radius:18px;
+                            background:linear-gradient(145deg,#151515,#0d0d0d);
+                            border:1px solid rgba(255,255,255,0.08);
+                            box-shadow:0 12px 30px rgba(0,0,0,0.20);
+                            transition:transform .25s ease,border-color .25s ease;
+                        "
+                    >
 
                         <div style="
-                            width:52px;
-                            height:52px;
-                            border-radius:16px;
-                            background:#d60000;
+                            width:48px;
+                            height:48px;
                             display:flex;
                             align-items:center;
                             justify-content:center;
-                            font-size:24px;
                             margin-bottom:14px;
-                            box-shadow:0 10px 24px rgba(214,0,0,0.30);
+                            border-radius:14px;
+                            background:linear-gradient(135deg,#e00000,#a90000);
+                            font-size:22px;
+                            box-shadow:0 8px 20px rgba(214,0,0,0.25);
                         ">
                             ⚠️
                         </div>
 
-                        <div style="
+                        <h3 style="
+                            margin:0 0 8px;
                             color:#fff;
-                            font-size:17px;
+                            font-size:16px;
+                            line-height:1.3;
                             font-weight:800;
-                            margin-bottom:8px;
                         ">
                             Ask Before Ordering
-                        </div>
+                        </h3>
 
-                        <div style="
-                            color:rgba(255,255,255,0.72);
-                            font-size:14px;
-                            line-height:1.8;
+                        <p style="
+                            margin:0;
+                            color:rgba(255,255,255,0.62);
+                            font-size:13px;
+                            line-height:1.7;
                         ">
-                            Please speak with our team about ingredients and allergen concerns.
-                        </div>
+                            Speak with our team about ingredients and allergen concerns.
+                        </p>
 
                     </div>
 
-                    <!-- CARD -->
-                    <div style="
-                        background:#111;
-                        border-radius:20px;
-                        padding:18px;
-                        border:1px solid rgba(255,255,255,0.08);
-                        box-shadow:0 10px 30px rgba(0,0,0,0.20);
-                    ">
+
+                    <!-- CARD 2 -->
+                    <div
+                        onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(214,0,0,.55)'"
+                        onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,.08)'"
+                        style="
+                            min-width:0;
+                            box-sizing:border-box;
+                            padding:18px;
+                            border-radius:18px;
+                            background:linear-gradient(145deg,#151515,#0d0d0d);
+                            border:1px solid rgba(255,255,255,0.08);
+                            box-shadow:0 12px 30px rgba(0,0,0,0.20);
+                            transition:transform .25s ease,border-color .25s ease;
+                        "
+                    >
 
                         <div style="
-                            width:52px;
-                            height:52px;
-                            border-radius:16px;
-                            background:#d60000;
+                            width:48px;
+                            height:48px;
                             display:flex;
                             align-items:center;
                             justify-content:center;
-                            font-size:24px;
                             margin-bottom:14px;
-                            box-shadow:0 10px 24px rgba(214,0,0,0.30);
+                            border-radius:14px;
+                            background:linear-gradient(135deg,#e00000,#a90000);
+                            font-size:22px;
+                            box-shadow:0 8px 20px rgba(214,0,0,0.25);
                         ">
                             🥛
                         </div>
 
-                        <div style="
+                        <h3 style="
+                            margin:0 0 8px;
                             color:#fff;
-                            font-size:17px;
+                            font-size:16px;
+                            line-height:1.3;
                             font-weight:800;
-                            margin-bottom:8px;
                         ">
                             Common Allergens
-                        </div>
+                        </h3>
 
-                        <div style="
-                            color:rgba(255,255,255,0.72);
-                            font-size:14px;
-                            line-height:1.8;
+                        <p style="
+                            margin:0;
+                            color:rgba(255,255,255,0.62);
+                            font-size:13px;
+                            line-height:1.7;
                         ">
-                            Food may contain dairy, gluten, eggs, nuts, or sesame ingredients.
-                        </div>
+                            Food may contain dairy, gluten, eggs, nuts or sesame.
+                        </p>
 
                     </div>
 
-                    <!-- CARD -->
-                    <div style="
-                        background:#111;
-                        border-radius:20px;
-                        padding:18px;
-                        border:1px solid rgba(255,255,255,0.08);
-                        box-shadow:0 10px 30px rgba(0,0,0,0.20);
-                    ">
+
+                    <!-- CARD 3 -->
+                    <div
+                        onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(214,0,0,.55)'"
+                        onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,.08)'"
+                        style="
+                            min-width:0;
+                            box-sizing:border-box;
+                            padding:18px;
+                            border-radius:18px;
+                            background:linear-gradient(145deg,#151515,#0d0d0d);
+                            border:1px solid rgba(255,255,255,0.08);
+                            box-shadow:0 12px 30px rgba(0,0,0,0.20);
+                            transition:transform .25s ease,border-color .25s ease;
+                        "
+                    >
 
                         <div style="
-                            width:52px;
-                            height:52px;
-                            border-radius:16px;
-                            background:#d60000;
+                            width:48px;
+                            height:48px;
                             display:flex;
                             align-items:center;
                             justify-content:center;
-                            font-size:24px;
                             margin-bottom:14px;
-                            box-shadow:0 10px 24px rgba(214,0,0,0.30);
+                            border-radius:14px;
+                            background:linear-gradient(135deg,#e00000,#a90000);
+                            font-size:22px;
+                            box-shadow:0 8px 20px rgba(214,0,0,0.25);
                         ">
                             🍽️
                         </div>
 
-                        <div style="
+                        <h3 style="
+                            margin:0 0 8px;
                             color:#fff;
-                            font-size:17px;
+                            font-size:16px;
+                            line-height:1.3;
                             font-weight:800;
-                            margin-bottom:8px;
                         ">
                             Freshly Prepared
-                        </div>
+                        </h3>
 
-                        <div style="
-                            color:rgba(255,255,255,0.72);
-                            font-size:14px;
-                            line-height:1.8;
+                        <p style="
+                            margin:0;
+                            color:rgba(255,255,255,0.62);
+                            font-size:13px;
+                            line-height:1.7;
                         ">
-                            All meals are freshly prepared in a shared kitchen environment.
-                        </div>
+                            Meals are freshly prepared in a shared kitchen environment.
+                        </p>
 
                     </div>
 
@@ -4349,7 +4794,94 @@ setInterval(() => {
 
     </div>
 
-</div>
+</section>
+
+
+<!-- ================= RESPONSIVE FIX ================= -->
+<style>
+
+* {
+    box-sizing:border-box;
+}
+
+html,
+body {
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+
+/* TABLET */
+@media (max-width:900px) {
+
+    section[style*="font-family:'Poppins'"] > div > div {
+        grid-template-columns:1fr !important;
+    }
+
+    section[style*="font-family:'Poppins'"] img {
+        min-height:380px !important;
+        height:380px !important;
+    }
+
+}
+
+
+/* MOBILE */
+@media (max-width:600px) {
+
+    section[style*="font-family:'Poppins'"] {
+        padding:22px 10px !important;
+    }
+
+    section[style*="font-family:'Poppins'"] > div {
+        border-radius:22px !important;
+    }
+
+    section[style*="font-family:'Poppins'"] img {
+        min-height:270px !important;
+        height:270px !important;
+    }
+
+    section[style*="font-family:'Poppins'"] > div > div > div:last-child {
+        padding:28px 20px !important;
+    }
+
+    section[style*="font-family:'Poppins'"] h2 {
+        font-size:34px !important;
+        letter-spacing:-1px !important;
+    }
+
+    section[style*="font-family:'Poppins'"] p {
+        font-size:14px !important;
+        line-height:1.75 !important;
+    }
+
+    section[style*="font-family:'Poppins'"] > div > div > div:last-child > div:last-child {
+        grid-template-columns:1fr !important;
+    }
+
+}
+
+
+/* SMALL PHONES */
+@media (max-width:380px) {
+
+    section[style*="font-family:'Poppins'"] {
+        padding:16px 7px !important;
+    }
+
+    section[style*="font-family:'Poppins'"] img {
+        height:240px !important;
+        min-height:240px !important;
+    }
+
+    section[style*="font-family:'Poppins'"] h2 {
+        font-size:30px !important;
+    }
+
+}
+</style>
+
 <section class="luxury-food-section">
 
     <!-- HERO SECTION -->
