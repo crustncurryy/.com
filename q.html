@@ -2707,7 +2707,774 @@ body.cnc-menu-open {
 
     </div>
 
+<!-- =====================================================
+     CRUST N CURRY - DRAGGABLE MENU BUTTON
+===================================================== -->
 
+<div id="cncMenuDownload">
+
+    <!-- DRAGGABLE BUTTON -->
+    <button
+        type="button"
+        id="cncMenuFloat"
+        aria-label="Open menu">
+
+        📖
+
+        <span class="cncMenuDot"></span>
+
+    </button>
+
+
+    <!-- MENU POPUP -->
+    <div
+        id="cncMenuPopup"
+        class="cncMenuPopup">
+
+        <button
+            type="button"
+            class="cncMenuClose"
+            onclick="cncCloseMenuPopup()">
+            ×
+        </button>
+
+
+        <div class="cncMenuBookIcon">
+            📖
+        </div>
+
+
+        <div class="cncMenuText">
+
+            <small>
+                CRUST N CURRY
+            </small>
+
+            <h3>
+                Our Menu
+            </h3>
+
+            <p>
+                View our complete menu or download
+                a copy for later.
+            </p>
+
+
+            <!-- VIEW MENU -->
+
+            <a
+                href="menu.pdf"
+                target="_blank"
+                rel="noopener"
+                class="cncViewMenuBtn">
+
+                👀 View Menu
+
+            </a>
+
+
+            <!-- DOWNLOAD -->
+
+            <a
+                href="menu.pdf"
+                download
+                class="cncDownloadMenuBtn">
+
+                📥 Download PDF
+
+            </a>
+
+
+            <!-- PHONE -->
+
+            <a
+                href="tel:+923229393122"
+                class="cncMenuPhone">
+
+                📞 Call Us
+
+                <strong>
+                    +92 322 9393122
+                </strong>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<style>
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+#cncMenuDownload {
+
+    position: fixed;
+
+    left: 25px;
+    top: 50%;
+
+    z-index: 999999;
+
+}
+
+
+/* =====================================================
+   FLOATING MENU BUTTON
+===================================================== */
+
+#cncMenuFloat {
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: grab;
+
+    user-select: none;
+
+    touch-action: none;
+
+    font-size: 27px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe477,
+            #ffca1a,
+            #d99b00
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.40),
+
+        0 0 0 5px
+        rgba(255,202,26,.12);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+#cncMenuFloat:active {
+
+    cursor: grabbing;
+
+    transform: scale(.95);
+
+}
+
+
+#cncMenuFloat:hover {
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.45),
+
+        0 0 0 7px
+        rgba(255,202,26,.14);
+
+}
+
+
+/* RED DOT */
+
+.cncMenuDot {
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    margin-left: -13px;
+    margin-top: -17px;
+
+    border-radius: 50%;
+
+    background: #d90000;
+
+    border: 2px solid white;
+
+}
+
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.cncMenuPopup {
+
+    position: absolute;
+
+    left: 72px;
+    top: 50%;
+
+    width: 300px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c1c1c,
+            #090909
+        );
+
+    border: 1px solid
+        rgba(255,202,26,.45);
+
+    box-shadow:
+        0 25px 65px
+        rgba(0,0,0,.60);
+
+    backdrop-filter: blur(18px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-50%)
+        translateX(-12px)
+        scale(.94);
+
+    transform-origin: left center;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s ease;
+
+}
+
+
+/* OPEN POPUP */
+
+.cncMenuPopup.cncOpen {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(0)
+        scale(1);
+
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.cncMenuClose {
+
+    position: absolute;
+
+    right: 9px;
+    top: 7px;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #aaa;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.cncMenuClose:hover {
+
+    color: #ffca1a;
+
+}
+
+
+/* =====================================================
+   BOOK ICON
+===================================================== */
+
+.cncMenuBookIcon {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    margin-bottom: 12px;
+
+    font-size: 27px;
+
+    background:
+        rgba(255,202,26,.12);
+
+    border: 1px solid
+        rgba(255,202,26,.25);
+
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.cncMenuText small {
+
+    color: #ffca1a;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.cncMenuText h3 {
+
+    margin: 4px 0 6px;
+
+    color: white;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+
+}
+
+
+.cncMenuText p {
+
+    margin: 0 0 17px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   VIEW MENU
+===================================================== */
+
+.cncViewMenuBtn {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    box-sizing: border-box;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: #111;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe477,
+            #ffca1a
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(255,202,26,.18);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.cncViewMenuBtn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(255,202,26,.30);
+
+}
+
+
+/* =====================================================
+   DOWNLOAD
+===================================================== */
+
+.cncDownloadMenuBtn {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 43px;
+
+    margin-top: 9px;
+
+    box-sizing: border-box;
+
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    color: #ffca1a;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border: 1px solid
+        rgba(255,202,26,.30);
+
+}
+
+
+.cncDownloadMenuBtn:hover {
+
+    background:
+        rgba(255,202,26,.10);
+
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+.cncMenuPhone {
+
+    display: block;
+
+    margin-top: 14px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid
+        rgba(255,255,255,.09);
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+}
+
+
+.cncMenuPhone strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #ffca1a;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    #cncMenuDownload {
+
+        left: 15px;
+        top: 70%;
+
+    }
+
+
+    #cncMenuFloat {
+
+        width: 52px;
+        height: 52px;
+
+        font-size: 24px;
+
+    }
+
+
+    .cncMenuPopup {
+
+        left: 63px;
+
+        width: 270px;
+
+        padding: 19px;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+/* =====================================================
+   MENU POPUP
+===================================================== */
+
+const cncMenuFloat =
+    document.getElementById(
+        "cncMenuFloat"
+    );
+
+const cncMenuPopup =
+    document.getElementById(
+        "cncMenuPopup"
+    );
+
+
+function cncCloseMenuPopup() {
+
+    cncMenuPopup.classList.remove(
+        "cncOpen"
+    );
+
+}
+
+
+/* =====================================================
+   CLICK / DRAG SYSTEM
+===================================================== */
+
+let cncDragging = false;
+
+let cncStartX = 0;
+let cncStartY = 0;
+
+let cncStartLeft = 0;
+let cncStartTop = 0;
+
+let cncMoved = false;
+
+
+cncMenuFloat.addEventListener(
+    "pointerdown",
+    function(e) {
+
+        cncDragging = true;
+
+        cncMoved = false;
+
+        cncStartX = e.clientX;
+        cncStartY = e.clientY;
+
+        const rect =
+            document
+                .getElementById(
+                    "cncMenuDownload"
+                )
+                .getBoundingClientRect();
+
+        cncStartLeft = rect.left;
+        cncStartTop = rect.top;
+
+        cncMenuFloat.setPointerCapture(
+            e.pointerId
+        );
+
+    }
+);
+
+
+cncMenuFloat.addEventListener(
+    "pointermove",
+    function(e) {
+
+        if (!cncDragging) return;
+
+
+        const dx =
+            e.clientX - cncStartX;
+
+        const dy =
+            e.clientY - cncStartY;
+
+
+        if (
+            Math.abs(dx) > 5 ||
+            Math.abs(dy) > 5
+        ) {
+
+            cncMoved = true;
+
+        }
+
+
+        let newLeft =
+            cncStartLeft + dx;
+
+        let newTop =
+            cncStartTop + dy;
+
+
+        const buttonWidth =
+            cncMenuFloat.offsetWidth;
+
+        const buttonHeight =
+            cncMenuFloat.offsetHeight;
+
+
+        /* Keep button inside screen */
+
+        newLeft =
+            Math.max(
+                5,
+                Math.min(
+                    newLeft,
+                    window.innerWidth -
+                    buttonWidth -
+                    5
+                )
+            );
+
+
+        newTop =
+            Math.max(
+                5,
+                Math.min(
+                    newTop,
+                    window.innerHeight -
+                    buttonHeight -
+                    5
+                )
+            );
+
+
+        const container =
+            document.getElementById(
+                "cncMenuDownload"
+            );
+
+
+        container.style.left =
+            newLeft + "px";
+
+        container.style.top =
+            newTop + "px";
+
+        container.style.right =
+            "auto";
+
+        container.style.bottom =
+            "auto";
+
+    }
+);
+
+
+cncMenuFloat.addEventListener(
+    "pointerup",
+    function(e) {
+
+        cncDragging = false;
+
+
+        /*
+           If user clicked rather than dragged,
+           open the menu.
+        */
+
+        if (!cncMoved) {
+
+            cncMenuPopup.classList.toggle(
+                "cncOpen"
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CLOSE WHEN CLICKING OUTSIDE
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(e) {
+
+        const container =
+            document.getElementById(
+                "cncMenuDownload"
+            );
+
+        if (
+            !container.contains(e.target)
+        ) {
+
+            cncMenuPopup.classList.remove(
+                "cncOpen"
+            );
+
+        }
+
+    }
+);
+
+</script>
     <!-- CATEGORY NAVIGATION -->
     <div class="cnc-category-nav" id="cncCategoryNav">
 
