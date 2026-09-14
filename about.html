@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1536,83 +1535,998 @@ body.cnc-menu-open {
 })();
 
 </script>
+<!-- =========================
+     CRUST N CURRY — OUR STORY
+     ========================= -->
+<section id="cncOurStory">
+
+<style>
+#cncOurStory{
+    position:relative;
+    padding:85px 20px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255,202,26,.10), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(170,0,0,.18), transparent 35%),
+        linear-gradient(135deg,#080808,#160303 55%,#050505);
+    overflow:hidden;
+    font-family:'Poppins',Arial,sans-serif;
+    color:#fff;
+}
+
+#cncOurStory *{
+    box-sizing:border-box;
+}
+
+.cnc-story-wrap{
+    max-width:1200px;
+    margin:auto;
+}
 
 
+/* =========================
+   TOP LABEL
+   ========================= */
 
-<section id="cncContactSection"
-style="
-width:100%;
-padding:80px 20px;
-background:
-radial-gradient(circle at 10% 20%,rgba(242,140,24,.12),transparent 30%),
-radial-gradient(circle at 90% 80%,rgba(179,0,27,.12),transparent 35%),
-linear-gradient(135deg,#120305,#2b080d,#120305);
-font-family:'Poppins',sans-serif;
-overflow:hidden;
-">
+.cnc-story-label{
+    text-align:center;
+    color:#ffca1a;
+    font-size:clamp(11px,1vw,13px);
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.cnc-story-title{
+    text-align:center;
+    font-size:clamp(32px,4vw,52px);
+    line-height:1.08;
+    font-weight:900;
+    margin:0 auto 18px;
+    max-width:850px;
+    color:#fff;
+}
+
+.cnc-story-title span{
+    color:#ffca1a;
+}
+
+.cnc-story-intro{
+    max-width:780px;
+    margin:0 auto 55px;
+    text-align:center;
+    color:#d7d7d7;
+    font-size:clamp(14px,1.3vw,16px);
+    line-height:1.8;
+}
+
+
+/* =========================
+   STORY GRID
+   ========================= */
+
+.cnc-story-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:50px;
+    align-items:center;
+}
+
+
+/* =========================
+   STORY TEXT
+   ========================= */
+
+.cnc-story-text{
+    position:relative;
+}
+
+.cnc-story-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 14px;
+    border:1px solid rgba(255,202,26,.35);
+    border-radius:50px;
+    background:rgba(255,202,26,.07);
+    color:#ffca1a;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:17px;
+}
+
+.cnc-story-kicker i{
+    font-size:12px;
+}
+
+.cnc-story-heading{
+    font-size:clamp(26px,3vw,38px);
+    line-height:1.16;
+    margin:0 0 18px;
+    font-weight:800;
+}
+
+.cnc-story-heading span{
+    color:#ffca1a;
+}
+
+.cnc-story-text p{
+    color:#d2d2d2;
+    font-size:clamp(14px,1.25vw,15.5px);
+    line-height:1.82;
+    margin:0 0 16px;
+}
+
+
+/* =========================
+   QUOTE
+   ========================= */
+
+.cnc-story-quote{
+    margin-top:26px;
+    padding:20px 22px;
+    border-left:4px solid #ffca1a;
+    background:linear-gradient(
+        90deg,
+        rgba(255,202,26,.09),
+        rgba(255,202,26,.02)
+    );
+    border-radius:0 16px 16px 0;
+}
+
+.cnc-story-quote strong{
+    display:block;
+    color:#fff;
+    font-size:clamp(15px,1.5vw,17px);
+    line-height:1.5;
+}
+
+.cnc-story-quote small{
+    display:block;
+    color:#ffca1a;
+    margin-top:8px;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   IMAGE SIDE
+   ========================= */
+
+.cnc-story-visual{
+    position:relative;
+    min-height:480px;
+}
+
+.cnc-story-main-img{
+    position:absolute;
+    width:82%;
+    height:410px;
+    right:0;
+    top:15px;
+    object-fit:cover;
+    border-radius:27px;
+    border:1px solid rgba(255,202,26,.35);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.6),
+        0 0 30px rgba(255,202,26,.08);
+}
+
+
+/* =========================
+   SMALL IMAGE
+   ========================= */
+
+.cnc-story-small-img{
+    position:absolute;
+    width:205px;
+    height:175px;
+    object-fit:cover;
+    left:0;
+    bottom:0;
+    border-radius:22px;
+    border:5px solid #100606;
+    box-shadow:0 18px 40px rgba(0,0,0,.65);
+}
+
+
+/* =========================
+   FLOATING BADGE
+   ========================= */
+
+.cnc-story-badge{
+    position:absolute;
+    right:5%;
+    bottom:40px;
+    background:rgba(12,12,12,.92);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,202,26,.35);
+    padding:15px 19px;
+    border-radius:16px;
+    box-shadow:0 15px 35px rgba(0,0,0,.45);
+}
+
+.cnc-story-badge strong{
+    display:block;
+    color:#ffca1a;
+    font-size:19px;
+    line-height:1;
+    margin-bottom:5px;
+}
+
+.cnc-story-badge span{
+    color:#ddd;
+    font-size:11px;
+}
+
+
+/* =========================
+   VALUES
+   ========================= */
+
+.cnc-story-values{
+    margin-top:65px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.cnc-value{
+    padding:24px 18px;
+    text-align:center;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    transition:.3s ease;
+}
+
+.cnc-value:hover{
+    transform:translateY(-6px);
+    border-color:rgba(255,202,26,.45);
+    background:rgba(255,202,26,.055);
+}
+
+.cnc-value-icon{
+    width:50px;
+    height:50px;
+    margin:0 auto 13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(255,202,26,.1);
+    color:#ffca1a;
+    font-size:19px;
+}
+
+.cnc-value h3{
+    margin:0 0 7px;
+    font-size:clamp(15px,1.4vw,17px);
+    color:#fff;
+}
+
+.cnc-value p{
+    margin:0;
+    color:#aaa;
+    font-size:clamp(11px,1.1vw,13px);
+    line-height:1.65;
+}
+
+
+/* =========================
+   TAKEAWAY / DELIVERY
+   ========================= */
+
+.cnc-order-story{
+    margin-top:60px;
+    padding:38px 32px;
+    border-radius:27px;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(115,0,0,.72),
+            rgba(25,5,5,.92)
+        );
+    border:1px solid rgba(255,202,26,.22);
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:28px;
+    align-items:center;
+    box-shadow:0 22px 55px rgba(0,0,0,.35);
+}
+
+.cnc-order-story h3{
+    margin:0 0 9px;
+    font-size:clamp(23px,2.6vw,33px);
+    line-height:1.2;
+    font-weight:800;
+}
+
+.cnc-order-story h3 span{
+    color:#ffca1a;
+}
+
+.cnc-order-story p{
+    margin:0;
+    color:#ddd;
+    max-width:700px;
+    line-height:1.75;
+    font-size:clamp(13px,1.2vw,15px);
+}
+
+.cnc-order-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.cnc-order-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s ease;
+    white-space:nowrap;
+}
+
+.cnc-order-btn.primary{
+    background:#ffca1a;
+    color:#111;
+}
+
+.cnc-order-btn.secondary{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.25);
+}
+
+.cnc-order-btn:hover{
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   FINAL STATEMENT
+   ========================= */
+
+.cnc-story-final{
+    margin:60px auto 0;
+    max-width:800px;
+    text-align:center;
+}
+
+.cnc-story-final h3{
+    margin:0 0 13px;
+    font-size:clamp(23px,2.8vw,35px);
+    line-height:1.2;
+}
+
+.cnc-story-final h3 span{
+    color:#ffca1a;
+}
+
+.cnc-story-final p{
+    margin:0;
+    color:#bbb;
+    font-size:clamp(13px,1.2vw,15px);
+    line-height:1.8;
+}
+
+
+/* ==================================================
+   TABLET / SMALL LAPTOP
+   ================================================== */
+
+@media(max-width:900px){
+
+    #cncOurStory{
+        padding:70px 18px;
+    }
+
+    .cnc-story-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .cnc-story-visual{
+        min-height:420px;
+        max-width:700px;
+        width:100%;
+        margin:auto;
+    }
+
+    .cnc-story-main-img{
+        width:88%;
+        height:350px;
+    }
+
+    .cnc-story-small-img{
+        width:175px;
+        height:150px;
+    }
+
+    .cnc-story-values{
+        grid-template-columns:repeat(2,1fr);
+        gap:13px;
+    }
+
+    .cnc-order-story{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .cnc-order-story p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .cnc-order-buttons{
+        justify-content:center;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media(max-width:550px){
+
+    #cncOurStory{
+        padding:58px 15px;
+    }
+
+    .cnc-story-label{
+        font-size:10px;
+        letter-spacing:2px;
+        margin-bottom:9px;
+    }
+
+    .cnc-story-title{
+        font-size:clamp(29px,8vw,36px);
+        line-height:1.1;
+        margin-bottom:15px;
+    }
+
+    .cnc-story-intro{
+        font-size:14px;
+        line-height:1.75;
+        margin-bottom:42px;
+    }
+
+    .cnc-story-grid{
+        gap:32px;
+    }
+
+    .cnc-story-kicker{
+        font-size:10px;
+        padding:6px 12px;
+        margin-bottom:14px;
+    }
+
+    .cnc-story-heading{
+        font-size:clamp(24px,7vw,30px);
+        line-height:1.18;
+        margin-bottom:15px;
+    }
+
+    .cnc-story-text p{
+        font-size:14px;
+        line-height:1.78;
+        margin-bottom:14px;
+    }
+
+    .cnc-story-quote{
+        margin-top:22px;
+        padding:17px 17px;
+    }
+
+    .cnc-story-quote strong{
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    .cnc-story-quote small{
+        font-size:9px;
+    }
+
+
+    /* MOBILE IMAGES */
+
+    .cnc-story-visual{
+        min-height:340px;
+    }
+
+    .cnc-story-main-img{
+        width:90%;
+        height:270px;
+        top:5px;
+        border-radius:22px;
+    }
+
+    .cnc-story-small-img{
+        width:140px;
+        height:120px;
+        border-radius:18px;
+        border-width:4px;
+    }
+
+    .cnc-story-badge{
+        right:0;
+        bottom:18px;
+        padding:12px 14px;
+        border-radius:14px;
+    }
+
+    .cnc-story-badge strong{
+        font-size:16px;
+    }
+
+    .cnc-story-badge span{
+        font-size:10px;
+    }
+
+
+    /* MOBILE VALUES */
+
+    .cnc-story-values{
+        margin-top:48px;
+        grid-template-columns:1fr 1fr;
+        gap:9px;
+    }
+
+    .cnc-value{
+        padding:19px 10px;
+        border-radius:17px;
+    }
+
+    .cnc-value-icon{
+        width:43px;
+        height:43px;
+        margin-bottom:10px;
+        font-size:16px;
+    }
+
+    .cnc-value h3{
+        font-size:14px;
+        margin-bottom:5px;
+    }
+
+    .cnc-value p{
+        font-size:11px;
+        line-height:1.55;
+    }
+
+
+    /* MOBILE ORDER BOX */
+
+    .cnc-order-story{
+        margin-top:48px;
+        padding:27px 18px;
+        border-radius:22px;
+        gap:22px;
+    }
+
+    .cnc-order-story h3{
+        font-size:23px;
+        line-height:1.25;
+    }
+
+    .cnc-order-story p{
+        font-size:13px;
+        line-height:1.7;
+    }
+
+    .cnc-order-buttons{
+        width:100%;
+        gap:9px;
+    }
+
+    .cnc-order-btn{
+        width:100%;
+        padding:12px 18px;
+        font-size:13px;
+    }
+
+
+    /* MOBILE FINAL */
+
+    .cnc-story-final{
+        margin-top:48px;
+    }
+
+    .cnc-story-final h3{
+        font-size:24px;
+        line-height:1.25;
+    }
+
+    .cnc-story-final p{
+        font-size:13px;
+        line-height:1.75;
+    }
+}
+
+
+/* ==================================================
+   VERY SMALL PHONES
+   ================================================== */
+
+@media(max-width:380px){
+
+    .cnc-story-title{
+        font-size:28px;
+    }
+
+    .cnc-story-heading{
+        font-size:23px;
+    }
+
+    .cnc-story-text p{
+        font-size:13.5px;
+    }
+
+    .cnc-story-visual{
+        min-height:315px;
+    }
+
+    .cnc-story-main-img{
+        height:250px;
+    }
+
+    .cnc-story-small-img{
+        width:125px;
+        height:108px;
+    }
+
+    .cnc-story-badge{
+        padding:10px 12px;
+    }
+
+    .cnc-story-badge strong{
+        font-size:14px;
+    }
+
+    .cnc-story-badge span{
+        font-size:9px;
+    }
+
+    .cnc-value h3{
+        font-size:13px;
+    }
+
+    .cnc-value p{
+        font-size:10.5px;
+    }
+}
+</style>
+
+
+<div class="cnc-story-wrap">
 
     <!-- HEADER -->
+    <div class="cnc-story-label">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+        More Than Just A Takeaway
+    </div>
 
-    <div style="
-    max-width:1200px;
-    margin:0 auto 50px;
-    text-align:center;
-    color:#fff;
-    ">
+    <h2 class="cnc-story-title">
+        A New Taste Has Arrived In
+        <span>Thornaby</span>
+    </h2>
 
-        <div style="
-        display:inline-flex;
-        align-items:center;
-        gap:10px;
-        padding:9px 18px;
-        border:1px solid rgba(242,193,90,.4);
-        border-radius:50px;
-        background:rgba(255,255,255,.06);
-        color:#f2c15a;
-        font-size:13px;
-        font-weight:700;
-        letter-spacing:2px;
-        text-transform:uppercase;
-        margin-bottom:18px;
-        ">
+    <p class="cnc-story-intro">
+        Crust N Curry was created with one simple idea:
+        <strong>good food should feel exciting again.</strong>
+        We wanted to bring together the flavours people already love,
+        add our own twist, and create a place where every order feels
+        like something worth looking forward to.
+    </p>
 
-            <i class="fas fa-location-dot"></i>
 
-            FIND & CONTACT US
+    <!-- MAIN STORY -->
+    <div class="cnc-story-grid">
+
+        <!-- STORY -->
+        <div class="cnc-story-text">
+
+            <div class="cnc-story-kicker">
+                <i class="fa-solid fa-heart"></i>
+                OUR STORY
+            </div>
+
+            <h2 class="cnc-story-heading">
+                We Didn't Want To Be
+                <span>Just Another Takeaway.</span>
+            </h2>
+
+            <p>
+                Crust N Curry was built for people who want more from
+                takeaway food. More flavour. More choice. Better
+                presentation. And most importantly, food that makes you
+                want to come back for the next order.
+            </p>
+
+            <p>
+                From freshly prepared pizzas and Teesside-style parmos
+                to juicy burgers, donner kebabs, wraps, curries, naan
+                and loaded sides, our menu brings different cravings
+                together under one roof.
+            </p>
+
+            <p>
+                Whether you're grabbing a quick takeaway in
+                <strong>Thornaby-on-Tees</strong>, ordering dinner for
+                the family, or getting food delivered after a long day,
+                our aim is simple: make your meal feel like the best
+                part of the day.
+            </p>
+
+            <div class="cnc-story-quote">
+                <strong>
+                    “Different cravings. One place. Food made to be remembered.”
+                </strong>
+
+                <small>
+                    — THE CRUST N CURRY WAY
+                </small>
+            </div>
 
         </div>
 
 
-        <h2 style="
-        margin:0;
-        font-size:clamp(36px,5vw,58px);
-        line-height:1.1;
-        font-weight:800;
-        color:#fff;
-        letter-spacing:-1px;
+        <!-- VISUAL -->
+        <div class="cnc-story-visual">
+
+            <!-- Replace these with your own Crust N Curry food photos -->
+
+            <img
+                class="cnc-story-main-img"
+                src="images/crust-n-curry-main.jpg"
+                alt="Fresh takeaway food from Crust N Curry in Thornaby-on-Tees"
+                width="900"
+                height="600"
+                loading="lazy"
+            >
+
+            <img
+                class="cnc-story-small-img"
+                src="about.jpg"
+                alt="Crust N Curry takeaway food prepared for collection and delivery"
+                width="600"
+                height="500"
+                loading="lazy"
+            >
+
+            <div class="cnc-story-badge">
+                <strong>Freshly Made</strong>
+                <span>Prepared for every order</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VALUES -->
+    <div class="cnc-story-values">
+
+        <div class="cnc-value">
+
+            <div class="cnc-value-icon">
+                <i class="fa-solid fa-utensils"></i>
+            </div>
+
+            <h3>Made To Order</h3>
+
+            <p>
+                Food prepared with care so your order arrives ready to enjoy.
+            </p>
+
+        </div>
+
+
+        <div class="cnc-value">
+
+            <div class="cnc-value-icon">
+                <i class="fa-solid fa-pepper-hot"></i>
+            </div>
+
+            <h3>Full Of Flavour</h3>
+
+            <p>
+                A menu bringing together bold flavours and favourite comfort foods.
+            </p>
+
+        </div>
+
+
+        <div class="cnc-value">
+
+            <div class="cnc-value-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+
+            <h3>Easy Takeaway</h3>
+
+            <p>
+                Order your favourites for a convenient takeaway in Thornaby.
+            </p>
+
+        </div>
+
+
+        <div class="cnc-value">
+
+            <div class="cnc-value-icon">
+                <i class="fa-solid fa-motorcycle"></i>
+            </div>
+
+            <h3>Food Delivered</h3>
+
+            <p>
+                Enjoy your favourite Crust N Curry dishes from the comfort of home.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TAKEAWAY + DELIVERY -->
+    <div class="cnc-order-story">
+
+        <div>
+
+            <h3>
+                Craving It?
+                <span>We'll Bring It To You.</span>
+            </h3>
+
+            <p>
+                Sometimes you want to collect your food and get home quickly.
+                Sometimes you simply want to stay in, relax and have dinner
+                delivered to your door. Crust N Curry is here for both.
+                Order your favourite pizza, parmo, burger, kebab, wrap,
+                curry, naan or sides for takeaway or delivery and enjoy
+                restaurant-style comfort food wherever you are.
+            </p>
+
+        </div>
+
+
+        <div class="cnc-order-buttons">
+
+            <a href="q.html" class="cnc-order-btn primary">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Order Online
+            </a>
+
+            <a href="tel:+447863208938" class="cnc-order-btn secondary">
+                <i class="fa-solid fa-phone"></i>
+                Call Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINAL BRAND MESSAGE -->
+    <div class="cnc-story-final">
+
+        <h3>
+            Your New Local Place For
+            <span>Good Food.</span>
+        </h3>
+
+        <p>
+            Based at 82 Westbury Street, Thornaby-on-Tees, Crust N Curry
+            is here to make great food simple, exciting and accessible.
+            Whether you're in Thornaby-on-Tees, Stockton-on-Tees,
+            Ingleby Barwick or Yarm, we're ready when your next craving
+            hits.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CRUST N CURRY - ABOUT US SECTION
+========================================================= -->
+
+<section id="cncAboutSection"
+style="
+width:100%;
+padding:85px 20px;
+background:
+radial-gradient(circle at 15% 15%,rgba(242,193,90,.10),transparent 30%),
+radial-gradient(circle at 90% 75%,rgba(179,0,27,.14),transparent 35%),
+linear-gradient(135deg,#120305,#2b080d,#120305);
+font-family:'Poppins',sans-serif;
+color:#fff;
+overflow:hidden;
+">
+
+    <!-- =====================================================
+         ABOUT INTRO
+    ====================================================== -->
+
+    <div style="
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+    ">
+
+        <!-- LABEL -->
+
+        <div style="
+        display:inline-flex;
+        align-items:center;
+        gap:9px;
+        padding:9px 18px;
+        border-radius:50px;
+        border:1px solid rgba(242,193,90,.4);
+        background:rgba(255,255,255,.05);
+        color:#f2c15a;
+        font-size:12px;
+        font-weight:700;
+        letter-spacing:2px;
+        text-transform:uppercase;
+        margin-bottom:20px;
         ">
 
-            Let's Talk.
-            <span style="
-            color:#f2c15a;
-            ">
-                Let's Eat.
+            <i class="fas fa-utensils"></i>
+
+            ABOUT CRUST N CURRY
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h1 style="
+        margin:0;
+        font-size:clamp(38px,6vw,64px);
+        line-height:1.08;
+        font-weight:800;
+        letter-spacing:-1.5px;
+        ">
+
+            Good Food.
+            <span style="color:#f2c15a;">
+                Good People.
             </span>
 
-        </h2>
+        </h1>
 
+
+        <!-- INTRO -->
 
         <p style="
-        max-width:650px;
-        margin:18px auto 0;
-        color:rgba(255,255,255,.72);
+        max-width:760px;
+        margin:22px auto 0;
+        color:rgba(255,255,255,.70);
         font-size:16px;
-        line-height:1.7;
+        line-height:1.85;
         ">
 
-            Have a question, want to place an order,
-            or simply craving something delicious?
-            We're here for you.
+            Welcome to <strong style="color:#fff;">Crust N Curry</strong>,
+            a local takeaway in Thornaby-on-Tees bringing together delicious
+            food, generous portions and friendly service. From satisfying
+            pizzas and classic takeaway favourites to burgers, kebabs,
+            curries and much more, our menu is all about giving you plenty
+            of choice when you're ready for a great meal.
 
         </p>
 
@@ -1620,234 +2534,245 @@ overflow:hidden;
 
 
 
-    <!-- MAIN CONTACT GRID -->
+    <!-- =====================================================
+         STORY AREA
+    ====================================================== -->
 
     <div style="
-    width:100%;
-    max-width:1200px;
-    margin:auto;
+    max-width:1100px;
+    margin:65px auto 0;
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    grid-template-columns:1.15fr .85fr;
+    gap:25px;
+    align-items:stretch;
     ">
 
 
-        <!-- =================================================
-             PHONE
-        ================================================== -->
+        <!-- OUR STORY -->
 
-        <a href="tel:+447863208938"
-        style="
-        text-decoration:none;
-        color:inherit;
-        display:block;
+        <div style="
+        padding:40px;
+        border-radius:25px;
+        background:
+        linear-gradient(145deg,rgba(179,0,27,.20),rgba(255,255,255,.045));
+        border:1px solid rgba(255,255,255,.10);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+        box-shadow:0 20px 50px rgba(0,0,0,.25);
         ">
 
-            <div
-            onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(242,193,90,.7)'"
-            onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,.12)'"
-            style="
-            height:100%;
-            padding:30px 25px;
-            border-radius:22px;
-            background:rgba(255,255,255,.07);
-            border:1px solid rgba(255,255,255,.12);
-            backdrop-filter:blur(15px);
-            -webkit-backdrop-filter:blur(15px);
-            transition:all .3s ease;
-            box-shadow:0 15px 40px rgba(0,0,0,.25);
+            <div style="
+            color:#f2c15a;
+            font-size:11px;
+            font-weight:700;
+            letter-spacing:2px;
+            text-transform:uppercase;
+            margin-bottom:12px;
+            ">
+
+                OUR STORY
+
+            </div>
+
+
+            <h2 style="
+            margin:0 0 18px;
+            font-size:clamp(28px,4vw,42px);
+            line-height:1.2;
+            font-weight:800;
+            ">
+
+                Made For
+                <span style="color:#f2c15a;">
+                    Every Craving
+                </span>
+
+            </h2>
+
+
+            <p style="
+            margin:0;
+            color:rgba(255,255,255,.65);
+            font-size:14px;
+            line-height:1.9;
+            ">
+
+                At Crust N Curry, we know that everyone has a different
+                craving. Sometimes you want a freshly prepared pizza,
+                sometimes a hearty parmo, a juicy burger or a satisfying
+                kebab. Other times, nothing but a comforting curry and
+                naan will do.
+
+                <br><br>
+
+                That's why we've created a varied takeaway menu designed
+                to bring different flavours together in one place. Whether
+                you're ordering for yourself, feeding the family or sharing
+                a meal with friends, we're here to make your food experience
+                simple, enjoyable and delicious.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- WHY US -->
+
+        <div style="
+        padding:40px;
+        border-radius:25px;
+        background:rgba(255,255,255,.055);
+        border:1px solid rgba(255,255,255,.10);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+        box-shadow:0 20px 50px rgba(0,0,0,.25);
+        ">
+
+            <div style="
+            color:#f2c15a;
+            font-size:11px;
+            font-weight:700;
+            letter-spacing:2px;
+            text-transform:uppercase;
+            margin-bottom:18px;
+            ">
+
+                WHY CHOOSE US
+
+            </div>
+
+
+            <!-- FEATURE 1 -->
+
+            <div style="
+            display:flex;
+            gap:15px;
+            align-items:flex-start;
+            margin-bottom:25px;
             ">
 
                 <div style="
-                width:62px;
-                height:62px;
+                min-width:48px;
+                height:48px;
+                border-radius:15px;
                 display:flex;
                 align-items:center;
                 justify-content:center;
-                border-radius:18px;
                 background:linear-gradient(135deg,#f2c15a,#d89416);
                 color:#1b0507;
-                font-size:24px;
-                margin-bottom:22px;
-                box-shadow:0 10px 25px rgba(242,193,90,.2);
+                font-size:18px;
                 ">
 
-                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-star"></i>
 
                 </div>
 
 
-                <div style="
-                color:#f2c15a;
-                font-size:12px;
-                font-weight:700;
-                text-transform:uppercase;
-                letter-spacing:1.5px;
-                margin-bottom:7px;
-                ">
+                <div>
 
-                    Call Us
+                    <h3 style="
+                    margin:0 0 5px;
+                    font-size:17px;
+                    font-weight:700;
+                    ">
 
-                </div>
+                        Plenty of Choice
 
+                    </h3>
 
-                <div style="
-                color:#fff;
-                font-size:20px;
-                font-weight:700;
-                margin-bottom:8px;
-                ">
+                    <p style="
+                    margin:0;
+                    color:rgba(255,255,255,.55);
+                    font-size:13px;
+                    line-height:1.6;
+                    ">
 
-                    +44 7863 208938
+                        A varied menu made for different tastes,
+                        moods and cravings.
 
-                </div>
-
-
-                <div style="
-                color:rgba(255,255,255,.6);
-                font-size:13px;
-                line-height:1.5;
-                ">
-
-                    Tap to call and place your order
+                    </p>
 
                 </div>
 
             </div>
 
-        </a>
 
 
+            <!-- FEATURE 2 -->
 
-        <!-- =================================================
-             EMAIL
-        ================================================== -->
-
-        <a href="mailto:crustncurry@gmail.com"
-        style="
-        text-decoration:none;
-        color:inherit;
-        display:block;
-        ">
-
-            <div
-            onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(242,193,90,.7)'"
-            onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,.12)'"
-            style="
-            height:100%;
-            padding:30px 25px;
-            border-radius:22px;
-            background:rgba(255,255,255,.07);
-            border:1px solid rgba(255,255,255,.12);
-            backdrop-filter:blur(15px);
-            -webkit-backdrop-filter:blur(15px);
-            transition:all .3s ease;
-            box-shadow:0 15px 40px rgba(0,0,0,.25);
+            <div style="
+            display:flex;
+            gap:15px;
+            align-items:flex-start;
+            margin-bottom:25px;
             ">
 
                 <div style="
-                width:62px;
-                height:62px;
+                min-width:48px;
+                height:48px;
+                border-radius:15px;
                 display:flex;
                 align-items:center;
                 justify-content:center;
-                border-radius:18px;
                 background:linear-gradient(135deg,#f2c15a,#d89416);
                 color:#1b0507;
-                font-size:24px;
-                margin-bottom:22px;
-                box-shadow:0 10px 25px rgba(242,193,90,.2);
+                font-size:18px;
                 ">
 
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-heart"></i>
 
                 </div>
 
 
-                <div style="
-                color:#f2c15a;
-                font-size:12px;
-                font-weight:700;
-                text-transform:uppercase;
-                letter-spacing:1.5px;
-                margin-bottom:7px;
-                ">
+                <div>
 
-                    Email Us
+                    <h3 style="
+                    margin:0 0 5px;
+                    font-size:17px;
+                    font-weight:700;
+                    ">
 
-                </div>
+                        Food Made To Enjoy
 
+                    </h3>
 
-                <div style="
-                color:#fff;
-                font-size:17px;
-                font-weight:700;
-                margin-bottom:8px;
-                word-break:break-word;
-                ">
+                    <p style="
+                    margin:0;
+                    color:rgba(255,255,255,.55);
+                    font-size:13px;
+                    line-height:1.6;
+                    ">
 
-                    crustncurry@gmail.com
+                        From classic favourites to satisfying
+                        comfort food, there's something for everyone.
 
-                </div>
-
-
-                <div style="
-                color:rgba(255,255,255,.6);
-                font-size:13px;
-                line-height:1.5;
-                ">
-
-                    Send us your questions or enquiries
+                    </p>
 
                 </div>
 
             </div>
 
-        </a>
 
 
+            <!-- FEATURE 3 -->
 
-        <!-- =================================================
-             LOCATION
-        ================================================== -->
-
-        <a
-        href="https://www.google.com/maps/search/?api=1&query=82+Westbury+Street+Thornaby+TS17+6NA"
-        target="_blank"
-        rel="noopener"
-        style="
-        text-decoration:none;
-        color:inherit;
-        display:block;
-        ">
-
-            <div
-            onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(242,193,90,.7)'"
-            onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,.12)'"
-            style="
-            height:100%;
-            padding:30px 25px;
-            border-radius:22px;
-            background:rgba(255,255,255,.07);
-            border:1px solid rgba(255,255,255,.12);
-            backdrop-filter:blur(15px);
-            -webkit-backdrop-filter:blur(15px);
-            transition:all .3s ease;
-            box-shadow:0 15px 40px rgba(0,0,0,.25);
+            <div style="
+            display:flex;
+            gap:15px;
+            align-items:flex-start;
             ">
 
                 <div style="
-                width:62px;
-                height:62px;
+                min-width:48px;
+                height:48px;
+                border-radius:15px;
                 display:flex;
                 align-items:center;
                 justify-content:center;
-                border-radius:18px;
                 background:linear-gradient(135deg,#f2c15a,#d89416);
                 color:#1b0507;
-                font-size:24px;
-                margin-bottom:22px;
-                box-shadow:0 10px 25px rgba(242,193,90,.2);
+                font-size:18px;
                 ">
 
                     <i class="fas fa-location-dot"></i>
@@ -1855,399 +2780,211 @@ overflow:hidden;
                 </div>
 
 
-                <div style="
-                color:#f2c15a;
-                font-size:12px;
-                font-weight:700;
-                text-transform:uppercase;
-                letter-spacing:1.5px;
-                margin-bottom:7px;
-                ">
+                <div>
 
-                    Visit Us
+                    <h3 style="
+                    margin:0 0 5px;
+                    font-size:17px;
+                    font-weight:700;
+                    ">
 
-                </div>
+                        Proudly Local
 
+                    </h3>
 
-                <div style="
-                color:#fff;
-                font-size:18px;
-                font-weight:700;
-                line-height:1.4;
-                margin-bottom:8px;
-                ">
+                    <p style="
+                    margin:0;
+                    color:rgba(255,255,255,.55);
+                    font-size:13px;
+                    line-height:1.6;
+                    ">
 
-                    82 Westbury Street
+                        Serving customers in Thornaby and
+                        surrounding areas of Teesside.
 
-                </div>
-
-
-                <div style="
-                color:rgba(255,255,255,.6);
-                font-size:13px;
-                line-height:1.5;
-                ">
-
-                    Thornaby-on-Tees • TS17 6NA
-                    <br>
-                    <span style="color:#f2c15a;">
-                        Open in Google Maps →
-                    </span>
+                    </p>
 
                 </div>
 
             </div>
 
-        </a>
-
-    </div>
-
-
-<!-- =========================================================
-     CONTACT PAGE FINAL CTA
-     ========================================================= -->
-
-<section style="
-width:100%;
-padding:55px 20px 70px;
-background:#080203;
-font-family:'Poppins',sans-serif;
-color:#fff;
-text-align:center;
-">
-
-<div style="max-width:800px;margin:auto;">
-
-<i class="fas fa-heart"
-style="
-font-size:25px;
-color:#f2c15a;
-margin-bottom:18px;
-"></i>
-
-<h2 style="
-margin:0 0 12px;
-font-size:clamp(27px,4vw,40px);
-font-weight:800;
-">
-We'd Love To
-<span style="color:#f2c15a;">Hear From You</span>
-</h2>
-
-<p style="
-margin:0 auto 25px;
-max-width:600px;
-color:rgba(255,255,255,.58);
-font-size:14px;
-line-height:1.8;
-">
-Have a question or ready to order?
-Get in touch with Crust N Curry today.
-</p>
-
-<div style="
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:12px;
-">
-
-<a href="tel:+447863208938"
-style="
-display:inline-flex;
-align-items:center;
-gap:9px;
-padding:14px 24px;
-border-radius:50px;
-background:#b3001b;
-color:#fff;
-text-decoration:none;
-font-size:13px;
-font-weight:700;
-">
-
-<i class="fas fa-phone"></i>
-Call Us
-
-</a>
-
-
-<a href="q.html"
-style="
-display:inline-flex;
-align-items:center;
-gap:9px;
-padding:14px 24px;
-border-radius:50px;
-background:#f2c15a;
-color:#240408;
-text-decoration:none;
-font-size:13px;
-font-weight:800;
-">
-
-<i class="fas fa-shopping-bag"></i>
-Order Online
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-<!-- ================= FINAL CONTACT / GET IN TOUCH SECTION ================= -->
-<section style="
-    padding:80px 20px;
-    background:linear-gradient(135deg,#100707 0%,#240909 55%,#0b0b0b 100%);
-    font-family:'Poppins',sans-serif;
-    position:relative;
-    overflow:hidden;
-">
-
-    <!-- Background Decoration -->
-    <div style="
-        position:absolute;
-        width:420px;
-        height:420px;
-        border-radius:50%;
-        border:1px solid rgba(255,202,26,.10);
-        top:-220px;
-        right:-150px;
-    "></div>
-
-    <div style="
-        position:absolute;
-        width:280px;
-        height:280px;
-        border-radius:50%;
-        background:#ffca1a;
-        opacity:.035;
-        bottom:-150px;
-        left:-100px;
-    "></div>
-
-
-    <div style="
-        max-width:950px;
-        margin:auto;
-        text-align:center;
-        position:relative;
-        z-index:2;
-    ">
-
-        <!-- Small Label -->
-        <div style="
-            display:inline-flex;
-            align-items:center;
-            gap:8px;
-            color:#ffca1a;
-            font-size:13px;
-            font-weight:700;
-            letter-spacing:2px;
-            text-transform:uppercase;
-            margin-bottom:16px;
-        ">
-            <span style="
-                width:7px;
-                height:7px;
-                background:#ffca1a;
-                border-radius:50%;
-                display:inline-block;
-            "></span>
-
-            We're Here For You
-        </div>
-
-
-        <!-- Main Heading -->
-        <h2 style="
-            margin:0 0 20px;
-            color:#fff;
-            font-size:clamp(30px,5vw,48px);
-            line-height:1.2;
-            font-weight:800;
-        ">
-            Have Something to
-            <span style="color:#ffca1a;">Ask?</span>
-        </h2>
-
-
-        <!-- Main Paragraph -->
-        <p style="
-            max-width:780px;
-            margin:0 auto 20px;
-            color:#e4e4e4;
-            font-size:16px;
-            line-height:1.9;
-        ">
-            We believe that great food is about more than just what is on the
-            plate — it is also about making our customers feel welcome and
-            looked after. If you have a question about our menu, want to ask
-            about an order, need help with delivery, have a special request,
-            or simply want to speak to us before ordering, please get in touch.
-            The team at <strong style="color:#ffca1a;">Crust N Curry</strong> is
-            always happy to help.
-        </p>
-
-
-        <p style="
-            max-width:700px;
-            margin:0 auto 35px;
-            color:#aaa;
-            font-size:14px;
-            line-height:1.8;
-        ">
-            No question is too small. Drop us a message, give us a call, or
-            come and speak to us — we'd love to hear from you and help make
-            your next meal exactly what you're looking for.
-        </p>
-
-
-        <!-- Interactive Contact Button -->
-        <a href="tel:+447863208938"
-           style="
-                display:inline-flex;
-                align-items:center;
-                justify-content:center;
-                gap:12px;
-                padding:17px 30px;
-                background:linear-gradient(135deg,#ffca1a,#e5a900);
-                color:#111;
-                text-decoration:none;
-                border-radius:50px;
-                font-size:15px;
-                font-weight:800;
-                box-shadow:0 12px 30px rgba(255,202,26,.20);
-                transition:all .3s ease;
-           "
-           onmouseover="
-                this.style.transform='translateY(-5px) scale(1.02)';
-                this.style.boxShadow='0 16px 35px rgba(255,202,26,.32)';
-           "
-           onmouseout="
-                this.style.transform='translateY(0) scale(1)';
-                this.style.boxShadow='0 12px 30px rgba(255,202,26,.20)';
-           ">
-
-            <i class="fas fa-comment-dots" style="font-size:19px;"></i>
-
-            Start a Conversation
-
-            <i class="fas fa-arrow-right" style="font-size:13px;"></i>
-
-        </a>
-
-
-        <!-- Trust / Closing Line -->
-        <div style="
-            margin-top:38px;
-            padding-top:24px;
-            border-top:1px solid rgba(255,255,255,.10);
-        ">
-
-            <p style="
-                margin:0;
-                color:#888;
-                font-size:13px;
-                line-height:1.7;
-            ">
-                Questions, orders or enquiries —
-                <span style="color:#ffca1a;font-weight:600;">
-                    we're only a call away.
-                </span>
-            </p>
-
         </div>
 
     </div>
 
-</section>
-<!-- ================= END FINAL CONTACT SECTION ================= -->
-<!-- ================= END FINAL CONTACT SECTION ================= -->
 
-    <!-- =================================================
-         SOCIAL ICONS
-    ================================================== -->
+
+    <!-- =====================================================
+         FOOD CATEGORY STRIP
+    ====================================================== -->
 
     <div style="
-    margin-top:38px;
+    max-width:1100px;
+    margin:25px auto 0;
+    padding:28px;
+    border-radius:23px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
     text-align:center;
     ">
 
         <div style="
-        color:rgba(255,255,255,.55);
-        font-size:12px;
-        letter-spacing:1px;
+        color:rgba(255,255,255,.45);
+        font-size:11px;
+        font-weight:700;
+        letter-spacing:2px;
         text-transform:uppercase;
-        margin-bottom:15px;
+        margin-bottom:20px;
         ">
 
-            Follow Crust N Curry
+            SOMETHING FOR EVERY CRAVING
 
         </div>
 
 
         <div style="
         display:flex;
+        flex-wrap:wrap;
         justify-content:center;
-        gap:12px;
+        gap:10px;
         ">
 
 
-            <a href="https://www.instagram.com/crustncurry"
-            target="_blank"
-            rel="noopener"
-            aria-label="Instagram"
-            style="
-            width:48px;
-            height:48px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            border-radius:50%;
-            background:rgba(255,255,255,.08);
-            border:1px solid rgba(255,255,255,.15);
+            <span style="
+            padding:10px 16px;
+            border-radius:50px;
+            background:rgba(179,0,27,.20);
+            border:1px solid rgba(179,0,27,.35);
             color:#fff;
-            font-size:19px;
-            text-decoration:none;
-            transition:all .3s ease;
-            "
-            onmouseover="this.style.background='#f2c15a';this.style.color='#1b0507';this.style.transform='translateY(-4px)'"
-            onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='#fff';this.style.transform='translateY(0)'">
-
-                <i class="fab fa-instagram"></i>
-
-            </a>
+            font-size:12px;
+            ">
+                <i class="fas fa-pizza-slice"
+                style="color:#f2c15a;margin-right:6px;"></i>
+                Pizza
+            </span>
 
 
-            <a href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener"
-            aria-label="Facebook"
-            style="
-            width:48px;
-            height:48px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            border-radius:50%;
-            background:rgba(255,255,255,.08);
-            border:1px solid rgba(255,255,255,.15);
+            <span style="
+            padding:10px 16px;
+            border-radius:50px;
+            background:rgba(179,0,27,.20);
+            border:1px solid rgba(179,0,27,.35);
             color:#fff;
-            font-size:19px;
-            text-decoration:none;
-            transition:all .3s ease;
-            "
-            onmouseover="this.style.background='#f2c15a';this.style.color='#1b0507';this.style.transform='translateY(-4px)'"
-            onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='#fff';this.style.transform='translateY(0)'">
+            font-size:12px;
+            ">
+                <i class="fas fa-drumstick-bite"
+                style="color:#f2c15a;margin-right:6px;"></i>
+                Parmos
+            </span>
 
-                <i class="fab fa-facebook-f"></i>
 
-            </a>
+            <span style="
+            padding:10px 16px;
+            border-radius:50px;
+            background:rgba(179,0,27,.20);
+            border:1px solid rgba(179,0,27,.35);
+            color:#fff;
+            font-size:12px;
+            ">
+                <i class="fas fa-burger"
+                style="color:#f2c15a;margin-right:6px;"></i>
+                Burgers
+            </span>
 
+
+            <span style="
+            padding:10px 16px;
+            border-radius:50px;
+            background:rgba(179,0,27,.20);
+            border:1px solid rgba(179,0,27,.35);
+            color:#fff;
+            font-size:12px;
+            ">
+                <i class="fas fa-kebab"
+                style="color:#f2c15a;margin-right:6px;"></i>
+                Kebabs
+            </span>
+
+
+            <span style="
+            padding:10px 16px;
+            border-radius:50px;
+            background:rgba(179,0,27,.20);
+            border:1px solid rgba(179,0,27,.35);
+            color:#fff;
+            font-size:12px;
+            ">
+                <i class="fas fa-bowl-food"
+                style="color:#f2c15a;margin-right:6px;"></i>
+                Curries
+            </span>
+
+
+            <span style="
+            padding:10px 16px;
+            border-radius:50px;
+            background:rgba(179,0,27,.20);
+            border:1px solid rgba(179,0,27,.35);
+            color:#fff;
+            font-size:12px;
+            ">
+                <i class="fas fa-bread-slice"
+                style="color:#f2c15a;margin-right:6px;"></i>
+                Naan
+            </span>
+
+
+            <span style="
+            padding:10px 16px;
+            border-radius:50px;
+            background:rgba(179,0,27,.20);
+            border:1px solid rgba(179,0,27,.35);
+            color:#fff;
+            font-size:12px;
+            ">
+                <i class="fas fa-utensils"
+                style="color:#f2c15a;margin-right:6px;"></i>
+                More Favourites
+            </span>
 
         </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FINAL ABOUT MESSAGE
+    ====================================================== -->
+
+    <div style="
+    max-width:780px;
+    margin:55px auto 0;
+    text-align:center;
+    ">
+
+        <i class="fas fa-quote-left"
+        style="
+        color:#f2c15a;
+        font-size:22px;
+        margin-bottom:15px;
+        "></i>
+
+
+        <p style="
+        margin:0;
+        color:rgba(255,255,255,.72);
+        font-size:15px;
+        line-height:1.9;
+        ">
+
+            Whether you're local to Thornaby or ordering from nearby,
+            we want every visit and every order to be something you look
+            forward to. Thank you for choosing
+            <strong style="color:#f2c15a;">Crust N Curry</strong> —
+            your local destination for delicious takeaway food.
+
+        </p>
 
     </div>
 
@@ -2260,212 +2997,757 @@ Order Online
 
 <style>
 
-@media(max-width:768px){
+@media(max-width:850px){
 
-    #cncContactSection{
-        padding:55px 15px !important;
+    #cncAboutSection > div:nth-of-type(2){
+        grid-template-columns:1fr !important;
     }
 
-    #cncContactSection > div:nth-of-type(2){
+}
+
+
+@media(max-width:600px){
+
+    #cncAboutSection{
+        padding:60px 15px !important;
+    }
+
+    #cncAboutSection > div:nth-of-type(2) > div{
+        padding:28px 23px !important;
+    }
+
+    #cncAboutSection h1{
+        font-size:40px !important;
+    }
+
+}
+
+
+</style>
+<!-- =========================================================
+     CRUST N CURRY - OUR FOOD
+     SEO FRIENDLY VISUAL FOOD SECTION
+========================================================= -->
+
+<section id="cncAboutFood"
+style="
+width:100%;
+padding:90px 20px;
+background:
+radial-gradient(circle at 5% 15%,rgba(242,193,90,.10),transparent 28%),
+radial-gradient(circle at 95% 80%,rgba(179,0,27,.16),transparent 32%),
+linear-gradient(135deg,#100204,#28080d,#0b0203);
+font-family:'Poppins',sans-serif;
+color:#fff;
+overflow:hidden;
+">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <div style="
+    max-width:900px;
+    margin:0 auto 55px;
+    text-align:center;
+    ">
+
+        <div style="
+        display:inline-flex;
+        align-items:center;
+        gap:9px;
+        padding:9px 18px;
+        border-radius:50px;
+        border:1px solid rgba(242,193,90,.40);
+        background:rgba(255,255,255,.05);
+        color:#f2c15a;
+        font-size:12px;
+        font-weight:700;
+        letter-spacing:2px;
+        text-transform:uppercase;
+        margin-bottom:18px;
+        ">
+
+            <i class="fas fa-utensils"></i>
+
+            OUR FOOD
+
+        </div>
+
+
+        <h2 style="
+        margin:0;
+        font-size:clamp(36px,5vw,58px);
+        line-height:1.1;
+        font-weight:800;
+        letter-spacing:-1px;
+        ">
+
+            Something For
+            <span style="color:#f2c15a;">
+                Every Craving
+            </span>
+
+        </h2>
+
+
+        <p style="
+        max-width:720px;
+        margin:20px auto 0;
+        color:rgba(255,255,255,.68);
+        font-size:15px;
+        line-height:1.9;
+        ">
+
+            At Crust N Curry, our menu brings together some of the
+            takeaway favourites people love across Thornaby and
+            Teesside. From freshly prepared pizza and the famous
+            Teesside parmo to burgers, kebabs and flavourful curries,
+            there is always something delicious to discover.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FEATURED FOOD GRID
+    ====================================================== -->
+
+    <div style="
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    ">
+
+
+        <!-- =================================================
+             PIZZA
+        ================================================== -->
+
+        <article
+        style="
+        position:relative;
+        min-height:430px;
+        border-radius:26px;
+        overflow:hidden;
+        background:#170507;
+        border:1px solid rgba(255,255,255,.10);
+        box-shadow:0 20px 50px rgba(0,0,0,.30);
+        transition:all .35s ease;
+        "
+        onmouseover="
+        this.style.transform='translateY(-10px)';
+        this.style.borderColor='rgba(242,193,90,.65)';
+        this.querySelector('.cncAboutFoodImg').style.transform='scale(1.08)';
+        "
+        onmouseout="
+        this.style.transform='translateY(0)';
+        this.style.borderColor='rgba(255,255,255,.10)';
+        this.querySelector('.cncAboutFoodImg').style.transform='scale(1)';
+        ">
+
+
+            <img
+            class="cncAboutFoodImg"
+            src="https://tb-static.uber.com/prod/image-proc/processed_images/910da6e4d2309d4d332d56436c15eca0/20fa9288fdc01be28055baedd768dc37.jpeg"
+            alt="Freshly baked pizza with melted cheese and toppings"
+            loading="lazy"
+            width="800"
+            height="800"
+            style="
+            width:100%;
+            height:100%;
+            position:absolute;
+            inset:0;
+            object-fit:cover;
+            transition:transform .7s ease;
+            ">
+
+
+            <div style="
+            position:absolute;
+            inset:0;
+            background:
+            linear-gradient(
+            to top,
+            rgba(8,1,3,1) 3%,
+            rgba(8,1,3,.75) 38%,
+            rgba(8,1,3,.15) 80%
+            );
+            "></div>
+
+
+            <div style="
+            position:absolute;
+            left:24px;
+            right:24px;
+            bottom:24px;
+            ">
+
+                <div style="
+                width:52px;
+                height:52px;
+                border-radius:16px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#f2c15a,#d89416);
+                color:#210508;
+                font-size:20px;
+                margin-bottom:16px;
+                ">
+
+                    <i class="fas fa-pizza-slice"></i>
+
+                </div>
+
+
+                <div style="
+                color:#f2c15a;
+                font-size:10px;
+                font-weight:700;
+                letter-spacing:2px;
+                text-transform:uppercase;
+                margin-bottom:6px;
+                ">
+
+                    HOT & CHEESY
+
+                </div>
+
+
+                <h3 style="
+                margin:0 0 8px;
+                font-size:27px;
+                font-weight:800;
+                ">
+
+                    Pizza
+
+                </h3>
+
+
+                <p style="
+                margin:0;
+                color:rgba(255,255,255,.67);
+                font-size:13px;
+                line-height:1.65;
+                ">
+
+                    Delicious pizza with generous toppings,
+                    perfect for a relaxed takeaway night.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             PARMO
+        ================================================== -->
+
+        <article
+        style="
+        position:relative;
+        min-height:430px;
+        border-radius:26px;
+        overflow:hidden;
+        background:#170507;
+        border:1px solid rgba(255,255,255,.10);
+        box-shadow:0 20px 50px rgba(0,0,0,.30);
+        transition:all .35s ease;
+        "
+        onmouseover="
+        this.style.transform='translateY(-10px)';
+        this.style.borderColor='rgba(242,193,90,.65)';
+        this.querySelector('.cncAboutFoodImg').style.transform='scale(1.08)';
+        "
+        onmouseout="
+        this.style.transform='translateY(0)';
+        this.style.borderColor='rgba(255,255,255,.10)';
+        this.querySelector('.cncAboutFoodImg').style.transform='scale(1)';
+        ">
+
+
+            <img
+            class="cncAboutFoodImg"
+            src="https://www.explorehartlepool.com/app/uploads/sites/5/2024/10/Parmo-3-1-450x600.jpg"
+            alt="Teesside chicken parmo with melted cheese, chips and salad"
+            loading="lazy"
+            width="600"
+            height="800"
+            style="
+            width:100%;
+            height:100%;
+            position:absolute;
+            inset:0;
+            object-fit:cover;
+            transition:transform .7s ease;
+            ">
+
+
+            <div style="
+            position:absolute;
+            inset:0;
+            background:
+            linear-gradient(
+            to top,
+            rgba(8,1,3,1) 3%,
+            rgba(8,1,3,.78) 40%,
+            rgba(8,1,3,.12) 80%
+            );
+            "></div>
+
+
+            <div style="
+            position:absolute;
+            left:24px;
+            right:24px;
+            bottom:24px;
+            ">
+
+                <div style="
+                width:52px;
+                height:52px;
+                border-radius:16px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#f2c15a,#d89416);
+                color:#210508;
+                font-size:20px;
+                margin-bottom:16px;
+                ">
+
+                    <i class="fas fa-drumstick-bite"></i>
+
+                </div>
+
+
+                <div style="
+                color:#f2c15a;
+                font-size:10px;
+                font-weight:700;
+                letter-spacing:2px;
+                text-transform:uppercase;
+                margin-bottom:6px;
+                ">
+
+                    TEESSIDE FAVOURITE
+
+                </div>
+
+
+                <h3 style="
+                margin:0 0 8px;
+                font-size:27px;
+                font-weight:800;
+                ">
+
+                    Chicken Parmo
+
+                </h3>
+
+
+                <p style="
+                margin:0;
+                color:rgba(255,255,255,.67);
+                font-size:13px;
+                line-height:1.65;
+                ">
+
+                    A classic Teesside favourite, perfect when
+                    you're looking for something seriously satisfying.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             KEBABS
+        ================================================== -->
+
+        <article
+        style="
+        position:relative;
+        min-height:430px;
+        border-radius:26px;
+        overflow:hidden;
+        background:#170507;
+        border:1px solid rgba(255,255,255,.10);
+        box-shadow:0 20px 50px rgba(0,0,0,.30);
+        transition:all .35s ease;
+        "
+        onmouseover="
+        this.style.transform='translateY(-10px)';
+        this.style.borderColor='rgba(242,193,90,.65)';
+        this.querySelector('.cncAboutFoodImg').style.transform='scale(1.08)';
+        "
+        onmouseout="
+        this.style.transform='translateY(0)';
+        this.style.borderColor='rgba(255,255,255,.10)';
+        this.querySelector('.cncAboutFoodImg').style.transform='scale(1)';
+        ">
+
+
+            <img
+            class="cncAboutFoodImg"
+            src="https://media.easy-peasy.ai/663ad657-8ae0-4087-9879-23a428055243/ced830bf-fb5c-462b-8214-b41ebc0a1fc7.png"
+            alt="Doner kebab with salad, sauce and chips"
+            loading="lazy"
+            width="800"
+            height="800"
+            style="
+            width:100%;
+            height:100%;
+            position:absolute;
+            inset:0;
+            object-fit:cover;
+            transition:transform .7s ease;
+            ">
+
+
+            <div style="
+            position:absolute;
+            inset:0;
+            background:
+            linear-gradient(
+            to top,
+            rgba(8,1,3,1) 3%,
+            rgba(8,1,3,.78) 40%,
+            rgba(8,1,3,.10) 80%
+            );
+            "></div>
+
+
+            <div style="
+            position:absolute;
+            left:24px;
+            right:24px;
+            bottom:24px;
+            ">
+
+                <div style="
+                width:52px;
+                height:52px;
+                border-radius:16px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#f2c15a,#d89416);
+                color:#210508;
+                font-size:20px;
+                margin-bottom:16px;
+                ">
+
+                    <i class="fas fa-fire"></i>
+
+                </div>
+
+
+                <div style="
+                color:#f2c15a;
+                font-size:10px;
+                font-weight:700;
+                letter-spacing:2px;
+                text-transform:uppercase;
+                margin-bottom:6px;
+                ">
+
+                    LOADED WITH FLAVOUR
+
+                </div>
+
+
+                <h3 style="
+                margin:0 0 8px;
+                font-size:27px;
+                font-weight:800;
+                ">
+
+                    Kebabs
+
+                </h3>
+
+
+                <p style="
+                margin:0;
+                color:rgba(255,255,255,.67);
+                font-size:13px;
+                line-height:1.65;
+                ">
+
+                    A satisfying takeaway favourite packed with
+                    meat, fresh salad and your choice of sauces.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             CURRY
+        ================================================== -->
+
+        <article
+        style="
+        position:relative;
+        min-height:430px;
+        border-radius:26px;
+        overflow:hidden;
+        background:#170507;
+        border:1px solid rgba(255,255,255,.10);
+        box-shadow:0 20px 50px rgba(0,0,0,.30);
+        transition:all .35s ease;
+        "
+        onmouseover="
+        this.style.transform='translateY(-10px)';
+        this.style.borderColor='rgba(242,193,90,.65)';
+        this.querySelector('.cncAboutFoodImg').style.transform='scale(1.08)';
+        "
+        onmouseout="
+        this.style.transform='translateY(0)';
+        this.style.borderColor='rgba(255,255,255,.10)';
+        this.querySelector('.cncAboutFoodImg').style.transform='scale(1)';
+        ">
+
+
+            <img
+            class="cncAboutFoodImg"
+            src="https://www.vatikagrand.ca/assets/backgrounds/4.webp"
+            alt="Indian curry served with naan bread"
+            loading="lazy"
+            width="800"
+            height="800"
+            style="
+            width:100%;
+            height:100%;
+            position:absolute;
+            inset:0;
+            object-fit:cover;
+            transition:transform .7s ease;
+            ">
+
+
+            <div style="
+            position:absolute;
+            inset:0;
+            background:
+            linear-gradient(
+            to top,
+            rgba(8,1,3,1) 3%,
+            rgba(8,1,3,.78) 40%,
+            rgba(8,1,3,.10) 80%
+            );
+            "></div>
+
+
+            <div style="
+            position:absolute;
+            left:24px;
+            right:24px;
+            bottom:24px;
+            ">
+
+                <div style="
+                width:52px;
+                height:52px;
+                border-radius:16px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#f2c15a,#d89416);
+                color:#210508;
+                font-size:20px;
+                margin-bottom:16px;
+                ">
+
+                    <i class="fas fa-bowl-food"></i>
+
+                </div>
+
+
+                <div style="
+                color:#f2c15a;
+                font-size:10px;
+                font-weight:700;
+                letter-spacing:2px;
+                text-transform:uppercase;
+                margin-bottom:6px;
+                ">
+
+                    RICH & FLAVOURFUL
+
+                </div>
+
+
+                <h3 style="
+                margin:0 0 8px;
+                font-size:27px;
+                font-weight:800;
+                ">
+
+                    Curries & Naan
+
+                </h3>
+
+
+                <p style="
+                margin:0;
+                color:rgba(255,255,255,.67);
+                font-size:13px;
+                line-height:1.65;
+                ">
+
+                    Comforting curry flavours paired with warm,
+                    freshly baked naan for a satisfying meal.
+
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SEO FRIENDLY LOCAL PARAGRAPH
+    ====================================================== -->
+
+    <div style="
+    max-width:900px;
+    margin:55px auto 0;
+    padding:30px 25px;
+    border-radius:24px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    ">
+
+        <p style="
+        margin:0;
+        color:rgba(255,255,255,.65);
+        font-size:14px;
+        line-height:1.9;
+        ">
+
+            Looking for a <strong style="color:#fff;">
+            takeaway in Thornaby-on-Tees
+            </strong>?
+            Crust N Curry offers a wide selection of
+            <strong style="color:#f2c15a;">
+            pizza, Teesside parmos, burgers, kebabs, wraps,
+            curries, naan and chips
+            </strong>
+            for customers in Thornaby and surrounding areas including
+            Stockton-on-Tees, Ingleby Barwick and Yarm.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MENU BUTTON
+    ====================================================== -->
+
+    <div style="
+    text-align:center;
+    margin-top:30px;
+    ">
+
+        <a href="q.html"
+        style="
+        display:inline-flex;
+        align-items:center;
+        gap:10px;
+        padding:15px 28px;
+        border-radius:50px;
+        background:linear-gradient(135deg,#f2c15a,#d89416);
+        color:#180305;
+        text-decoration:none;
+        font-size:14px;
+        font-weight:800;
+        box-shadow:0 12px 30px rgba(242,193,90,.18);
+        transition:all .3s ease;
+        "
+        onmouseover="
+        this.style.transform='translateY(-4px)';
+        this.style.boxShadow='0 16px 35px rgba(242,193,90,.30)';
+        "
+        onmouseout="
+        this.style.transform='translateY(0)';
+        this.style.boxShadow='0 12px 30px rgba(242,193,90,.18)';
+        ">
+
+            <i class="fas fa-book-open"></i>
+
+            Explore Our Menu
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MOBILE RESPONSIVE
+========================================================= -->
+
+<style>
+
+@media(max-width:1000px){
+
+    #cncAboutFood > div:nth-of-type(2){
+        grid-template-columns:repeat(2,1fr) !important;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    #cncAboutFood{
+        padding:60px 15px !important;
+    }
+
+    #cncAboutFood > div:nth-of-type(2){
         grid-template-columns:1fr !important;
         gap:15px !important;
     }
 
-    #cncContactSection h2{
+    #cncAboutFood h2{
         font-size:36px !important;
     }
 
-    #cncContactSection p{
-        font-size:14px !important;
-    }
-
-    #cncContactSection > div:nth-of-type(3){
-        padding:24px 20px !important;
-        text-align:center;
-        justify-content:center !important;
-    }
-
-    #cncContactSection > div:nth-of-type(3) > div{
-        width:100%;
-    }
-
-    #cncContactSection > div:nth-of-type(3) a{
-        width:100%;
-    }
-
-}
-
-@media(max-width:400px){
-
-    #cncContactSection{
-        padding:45px 12px !important;
-    }
-
-    #cncContactSection h2{
-        font-size:31px !important;
+    #cncAboutFood article{
+        min-height:390px !important;
     }
 
 }
 
 </style>
-
-<!-- =========================================================
-     FIND US
-     ========================================================= -->
-
-<section style="
-width:100%;
-padding:70px 20px;
-background:#080203;
-font-family:'Poppins',sans-serif;
-color:#fff;
-">
-
-<div style="
-max-width:1150px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-align-items:stretch;
-">
-
-
-<!-- LOCATION TEXT -->
-
-<div style="
-padding:40px;
-border-radius:24px;
-background:
-linear-gradient(145deg,rgba(179,0,27,.20),rgba(255,255,255,.035));
-border:1px solid rgba(255,255,255,.09);
-">
-
-<div style="
-color:#f2c15a;
-font-size:11px;
-font-weight:700;
-letter-spacing:2px;
-text-transform:uppercase;
-margin-bottom:12px;
-">
-OUR LOCATION
-</div>
-
-<h2 style="
-margin:0 0 18px;
-font-size:clamp(28px,4vw,40px);
-font-weight:800;
-">
-Find
-<span style="color:#f2c15a;">Crust N Curry</span>
-</h2>
-
-<p style="
-margin:0 0 25px;
-color:rgba(255,255,255,.64);
-font-size:14px;
-line-height:1.9;
-">
-You can find Crust N Curry at
-<strong style="color:#fff;">
-82 Westbury Street, Thornaby-on-Tees, TS17 6NA.
-</strong>
-We're conveniently located for customers in
-Thornaby-on-Tees and nearby areas of Stockton-on-Tees,
-Ingleby Barwick and Yarm.
-</p>
-
-
-<div style="
-display:flex;
-align-items:flex-start;
-gap:13px;
-margin-bottom:18px;
-">
-
-<i class="fas fa-map-marker-alt"
-style="color:#f2c15a;margin-top:4px;"></i>
-
-<div style="
-font-size:14px;
-line-height:1.6;
-">
-82 Westbury Street<br>
-Thornaby-on-Tees<br>
-TS17 6NA
-</div>
-
-</div>
-
-
-<a
-href="https://www.google.com/maps/search/?api=1&query=82+Westbury+Street+Thornaby+TS17+6NA"
-target="_blank"
-rel="noopener"
-style="
-display:inline-flex;
-align-items:center;
-gap:9px;
-padding:12px 20px;
-border-radius:50px;
-background:#b3001b;
-color:#fff;
-text-decoration:none;
-font-size:13px;
-font-weight:700;
-">
-
-<i class="fas fa-directions"></i>
-Get Directions
-
-</a>
-
-</div>
-
-
-<!-- MAP -->
-
-<div style="
-min-height:350px;
-border-radius:24px;
-overflow:hidden;
-border:1px solid rgba(255,255,255,.1);
-background:#151515;
-">
-
-<iframe
-src="https://www.google.com/maps?q=82%20Westbury%20Street%20Thornaby%20TS17%206NA&output=embed"
-width="100%"
-height="100%"
-style="
-border:0;
-min-height:350px;
-display:block;
-"
-loading="lazy"
-referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-</div>
-
-</div>
-
-
-<style>
-
-@media(max-width:800px){
-
-section > div{
-grid-template-columns:1fr !important;
-}
-
-}
-
-</style>
-
-</section>
-
 
 <!-- BOTTOM BAR -->
 <div style="text-align:center; padding:15px; background:#000; border-top:1px solid rgba(255,106,0,0.2);">
@@ -2495,4 +3777,3 @@ grid-template-columns:1fr !important;
     </body>
 
 </html>
-
