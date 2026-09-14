@@ -3765,6 +3765,1536 @@ body {
   letter-spacing:0.5px;
 }
 </style>
+    <!-- =========================================================
+     CRUST N CURRY — MENU PREVIEW
+     10 MENU IMAGES: m1.jpg TO m10.jpg
+     CLICK IMAGE TO OPEN LARGE MENU
+     ========================================================= -->
+
+<section id="cncMenuPreview">
+
+<style>
+
+#cncMenuPreview{
+    position:relative;
+    width:100%;
+    padding:80px 20px;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255,202,26,.09),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(130,0,0,.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #080808,
+            #170303 55%,
+            #050505
+        );
+    overflow:hidden;
+    font-family:'Poppins',Arial,sans-serif;
+    color:#fff;
+}
+
+#cncMenuPreview *{
+    box-sizing:border-box;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.cnc-menu-container{
+    max-width:1200px;
+    margin:auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.cnc-menu-label{
+    text-align:center;
+    color:#ffca1a;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.cnc-menu-title{
+    text-align:center;
+    margin:0 auto 14px;
+    font-size:clamp(30px,4vw,50px);
+    line-height:1.1;
+    font-weight:900;
+}
+
+.cnc-menu-title span{
+    color:#ffca1a;
+}
+
+.cnc-menu-description{
+    max-width:720px;
+    margin:0 auto 38px;
+    text-align:center;
+    color:#c5c5c5;
+    font-size:15px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   MENU SLIDER
+   ========================================================= */
+
+.cnc-menu-slider{
+    position:relative;
+    width:100%;
+}
+
+
+/* =========================================================
+   TRACK
+   ========================================================= */
+
+.cnc-menu-track{
+    display:flex;
+    gap:18px;
+
+    width:100%;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scroll-behavior:smooth;
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:none;
+
+    padding:8px 5px 22px;
+}
+
+.cnc-menu-track::-webkit-scrollbar{
+    display:none;
+}
+
+
+/* =========================================================
+   MENU CARD
+   ========================================================= */
+
+.cnc-menu-card{
+    position:relative;
+
+    flex:0 0 calc((100% - 54px) / 4);
+
+    height:330px;
+
+    scroll-snap-align:start;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:#111;
+
+    border:1px solid rgba(255,202,26,.22);
+
+    cursor:pointer;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.5);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.cnc-menu-card:hover{
+    transform:translateY(-7px);
+
+    border-color:rgba(255,202,26,.65);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.65),
+        0 0 25px rgba(255,202,26,.08);
+}
+
+
+/* =========================================================
+   MENU IMAGE
+   ========================================================= */
+
+.cnc-menu-card img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    user-select:none;
+    -webkit-user-drag:none;
+
+    transition:
+        transform .5s ease;
+}
+
+.cnc-menu-card:hover img{
+    transform:scale(1.04);
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+   ========================================================= */
+
+.cnc-menu-card::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.78),
+            rgba(0,0,0,.05) 55%,
+            transparent
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   CLICK TO VIEW LABEL
+   ========================================================= */
+
+.cnc-menu-view{
+    position:absolute;
+
+    left:50%;
+    bottom:20px;
+
+    transform:
+        translateX(-50%)
+        translateY(8px);
+
+    z-index:2;
+
+    width:max-content;
+
+    padding:9px 16px;
+
+    border-radius:50px;
+
+    background:rgba(0,0,0,.78);
+
+    border:1px solid rgba(255,202,26,.5);
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    opacity:.9;
+
+    transition:.3s ease;
+
+    backdrop-filter:blur(8px);
+
+    white-space:nowrap;
+}
+
+.cnc-menu-card:hover .cnc-menu-view{
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+    background:#ffca1a;
+
+    color:#111;
+}
+
+
+/* =========================================================
+   SLIDER BUTTONS
+   ========================================================= */
+
+.cnc-menu-arrow{
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    z-index:5;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,202,26,.5);
+
+    background:rgba(8,8,8,.9);
+
+    color:#ffca1a;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.5);
+}
+
+.cnc-menu-arrow:hover{
+    background:#ffca1a;
+    color:#111;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.cnc-menu-prev{
+    left:-24px;
+}
+
+.cnc-menu-next{
+    right:-24px;
+}
+
+
+/* =========================================================
+   INFO BELOW SLIDER
+   ========================================================= */
+
+.cnc-menu-info{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:8px;
+
+    color:#999;
+
+    font-size:12px;
+}
+
+.cnc-menu-info i{
+    color:#ffca1a;
+}
+
+
+/* =========================================================
+   FULLSCREEN MENU POPUP
+   ========================================================= */
+
+.cnc-menu-lightbox{
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    background:
+        rgba(0,0,0,.94);
+
+    backdrop-filter:blur(12px);
+}
+
+.cnc-menu-lightbox.active{
+    display:flex;
+}
+
+
+/* =========================================================
+   LARGE IMAGE AREA
+   ========================================================= */
+
+.cnc-menu-lightbox-content{
+    position:relative;
+
+    width:min(100%,1100px);
+
+    height:min(92vh,900px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* =========================================================
+   LARGE MENU IMAGE
+   ========================================================= */
+
+.cnc-menu-large-image{
+    max-width:92%;
+
+    max-height:92vh;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.85);
+
+    user-select:none;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.cnc-menu-close{
+    position:fixed;
+
+    top:20px;
+    right:25px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,202,26,.55);
+
+    background:rgba(10,10,10,.9);
+
+    color:#ffca1a;
+
+    font-size:20px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:100001;
+
+    transition:.3s ease;
+}
+
+.cnc-menu-close:hover{
+    background:#ffca1a;
+    color:#111;
+
+    transform:rotate(90deg);
+}
+
+
+/* =========================================================
+   POPUP PREVIOUS / NEXT
+   ========================================================= */
+
+.cnc-lightbox-arrow{
+    position:fixed;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,202,26,.55);
+
+    background:rgba(10,10,10,.9);
+
+    color:#ffca1a;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:100001;
+
+    font-size:18px;
+
+    transition:.3s ease;
+}
+
+.cnc-lightbox-arrow:hover{
+    background:#ffca1a;
+    color:#111;
+}
+
+.cnc-lightbox-prev{
+    left:25px;
+}
+
+.cnc-lightbox-next{
+    right:25px;
+}
+
+
+/* =========================================================
+   COUNTER
+   ========================================================= */
+
+.cnc-menu-counter{
+    position:fixed;
+
+    bottom:22px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:100001;
+
+    padding:8px 15px;
+
+    border-radius:50px;
+
+    background:rgba(10,10,10,.88);
+
+    border:1px solid rgba(255,202,26,.35);
+
+    color:#fff;
+
+    font-size:12px;
+}
+
+.cnc-menu-counter span{
+    color:#ffca1a;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1000px){
+
+    #cncMenuPreview{
+        padding:65px 18px;
+    }
+
+    .cnc-menu-card{
+        flex:0 0 calc((100% - 36px) / 3);
+
+        height:310px;
+    }
+
+    .cnc-menu-prev{
+        left:-10px;
+    }
+
+    .cnc-menu-next{
+        right:-10px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    #cncMenuPreview{
+        padding:55px 15px;
+    }
+
+    .cnc-menu-label{
+        font-size:10px;
+        letter-spacing:2px;
+    }
+
+    .cnc-menu-title{
+        font-size:clamp(28px,8vw,36px);
+    }
+
+    .cnc-menu-description{
+        font-size:13px;
+
+        line-height:1.7;
+
+        margin-bottom:28px;
+    }
+
+
+    /* One large menu + part of next */
+
+    .cnc-menu-card{
+        flex:0 0 82%;
+
+        height:390px;
+
+        border-radius:20px;
+    }
+
+
+    /* Hide small slider arrows */
+
+    .cnc-menu-arrow{
+        display:none;
+    }
+
+
+    .cnc-menu-view{
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+        background:rgba(0,0,0,.75);
+
+        padding:9px 15px;
+    }
+
+
+    .cnc-menu-info{
+        font-size:11px;
+    }
+
+
+    /* LIGHTBOX */
+
+    .cnc-menu-lightbox{
+        padding:10px;
+    }
+
+    .cnc-menu-large-image{
+        max-width:96%;
+
+        max-height:88vh;
+
+        border-radius:6px;
+    }
+
+    .cnc-menu-close{
+        width:43px;
+        height:43px;
+
+        top:12px;
+        right:12px;
+
+        font-size:18px;
+    }
+
+    .cnc-lightbox-arrow{
+        width:42px;
+        height:42px;
+
+        font-size:15px;
+    }
+
+    .cnc-lightbox-prev{
+        left:10px;
+    }
+
+    .cnc-lightbox-next{
+        right:10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media(max-width:400px){
+
+    #cncMenuPreview{
+        padding:48px 12px;
+    }
+
+    .cnc-menu-title{
+        font-size:28px;
+    }
+
+    .cnc-menu-description{
+        font-size:12.5px;
+    }
+
+    .cnc-menu-card{
+        flex:0 0 87%;
+
+        height:350px;
+    }
+
+    .cnc-menu-counter{
+        bottom:15px;
+
+        font-size:11px;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     MENU CONTENT
+     ========================================================= -->
+
+<div class="cnc-menu-container">
+
+
+    <!-- HEADER -->
+
+    <div class="cnc-menu-label">
+
+        <i class="fa-solid fa-utensils"></i>
+
+        OUR MENU
+
+    </div>
+
+
+    <h2 class="cnc-menu-title">
+
+        Explore Our
+        <span>Menu</span>
+
+    </h2>
+
+
+    <p class="cnc-menu-description">
+
+        Hungry for something delicious?
+        Browse our menu below and tap any menu page
+        to view it clearly. From pizza and Teesside parmos
+        to burgers, kebabs, wraps, curries and more,
+        there's something for every craving.
+
+    </p>
+
+
+    <!-- =====================================================
+         MENU SLIDER
+         ===================================================== -->
+
+    <div class="cnc-menu-slider">
+
+
+        <!-- PREVIOUS -->
+
+        <button
+            type="button"
+            class="cnc-menu-arrow cnc-menu-prev"
+            id="cncMenuPrev"
+            aria-label="Previous menu"
+        >
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+        <!-- TRACK -->
+
+        <div
+            class="cnc-menu-track"
+            id="cncMenuTrack"
+        >
+
+
+            <!-- MENU 1 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="0"
+            >
+
+                <img
+                    src="images/m1.jpg"
+                    alt="Crust N Curry menu page 1"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 2 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="1"
+            >
+
+                <img
+                    src="images/m2.jpg"
+                    alt="Crust N Curry menu page 2"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 3 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="2"
+            >
+
+                <img
+                    src="images/m3.jpg"
+                    alt="Crust N Curry menu page 3"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 4 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="3"
+            >
+
+                <img
+                    src="images/m4.jpg"
+                    alt="Crust N Curry menu page 4"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 5 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="4"
+            >
+
+                <img
+                    src="images/m5.jpg"
+                    alt="Crust N Curry menu page 5"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 6 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="5"
+            >
+
+                <img
+                    src="images/m6.jpg"
+                    alt="Crust N Curry menu page 6"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 7 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="6"
+            >
+
+                <img
+                    src="images/m7.jpg"
+                    alt="Crust N Curry menu page 7"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 8 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="7"
+            >
+
+                <img
+                    src="images/m8.jpg"
+                    alt="Crust N Curry menu page 8"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 9 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="8"
+            >
+
+                <img
+                    src="images/m9.jpg"
+                    alt="Crust N Curry menu page 9"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU 10 -->
+
+            <div
+                class="cnc-menu-card"
+                data-index="9"
+            >
+
+                <img
+                    src="images/m10.jpg"
+                    alt="Crust N Curry menu page 10"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                >
+
+                <div class="cnc-menu-view">
+
+                    <i class="fa-solid fa-expand"></i>
+                    &nbsp;
+                    Click To View Menu
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- NEXT -->
+
+        <button
+            type="button"
+            class="cnc-menu-arrow cnc-menu-next"
+            id="cncMenuNext"
+            aria-label="Next menu"
+        >
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+
+    </div>
+
+
+    <!-- INFO -->
+
+    <div class="cnc-menu-info">
+
+        <i class="fa-solid fa-hand-pointer"></i>
+
+        Click any menu page to view it larger
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     FULL MENU LIGHTBOX
+     ========================================================= -->
+
+<div
+    class="cnc-menu-lightbox"
+    id="cncMenuLightbox"
+    aria-hidden="true"
+>
+
+
+    <!-- CLOSE -->
+
+    <button
+        type="button"
+        class="cnc-menu-close"
+        id="cncMenuClose"
+        aria-label="Close menu"
+    >
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <!-- PREVIOUS -->
+
+    <button
+        type="button"
+        class="cnc-lightbox-arrow cnc-lightbox-prev"
+        id="cncLightboxPrev"
+        aria-label="Previous menu page"
+    >
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+
+    <!-- IMAGE -->
+
+    <div class="cnc-menu-lightbox-content">
+
+        <img
+            id="cncMenuLargeImage"
+            class="cnc-menu-large-image"
+            src=""
+            alt="Crust N Curry menu"
+        >
+
+    </div>
+
+
+    <!-- NEXT -->
+
+    <button
+        type="button"
+        class="cnc-lightbox-arrow cnc-lightbox-next"
+        id="cncLightboxNext"
+        aria-label="Next menu page"
+    >
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+
+    <!-- COUNTER -->
+
+    <div class="cnc-menu-counter">
+
+        Menu
+        <span id="cncMenuCurrent">1</span>
+        /
+        10
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+(function(){
+
+    const track =
+        document.getElementById("cncMenuTrack");
+
+    const cards =
+        document.querySelectorAll(".cnc-menu-card");
+
+    const prev =
+        document.getElementById("cncMenuPrev");
+
+    const next =
+        document.getElementById("cncMenuNext");
+
+
+    const lightbox =
+        document.getElementById("cncMenuLightbox");
+
+    const largeImage =
+        document.getElementById("cncMenuLargeImage");
+
+    const close =
+        document.getElementById("cncMenuClose");
+
+    const lightboxPrev =
+        document.getElementById("cncLightboxPrev");
+
+    const lightboxNext =
+        document.getElementById("cncLightboxNext");
+
+    const currentNumber =
+        document.getElementById("cncMenuCurrent");
+
+
+    let currentIndex = 0;
+
+    let autoSlide;
+
+
+    /* =====================================================
+       GET IMAGE
+       ===================================================== */
+
+    function getImage(index){
+
+        return cards[index]
+            .querySelector("img")
+            .src;
+
+    }
+
+
+    /* =====================================================
+       MOVE SLIDER
+       ===================================================== */
+
+    function moveSlider(index){
+
+        if(index < 0){
+
+            index = cards.length - 1;
+
+        }
+
+        if(index >= cards.length){
+
+            index = 0;
+
+        }
+
+        currentIndex = index;
+
+
+        track.scrollTo({
+
+            left:
+                cards[index].offsetLeft -
+                track.offsetLeft,
+
+            behavior:"smooth"
+
+        });
+
+    }
+
+
+    /* =====================================================
+       NEXT SLIDER
+       ===================================================== */
+
+    next.addEventListener("click",function(){
+
+        moveSlider(currentIndex + 1);
+
+        restartAuto();
+
+    });
+
+
+    /* =====================================================
+       PREVIOUS SLIDER
+       ===================================================== */
+
+    prev.addEventListener("click",function(){
+
+        moveSlider(currentIndex - 1);
+
+        restartAuto();
+
+    });
+
+
+    /* =====================================================
+       OPEN LARGE MENU
+       ===================================================== */
+
+    function openMenu(index){
+
+        currentIndex = index;
+
+        largeImage.src =
+            getImage(currentIndex);
+
+        largeImage.alt =
+            "Crust N Curry menu page " +
+            (currentIndex + 1);
+
+        currentNumber.textContent =
+            currentIndex + 1;
+
+
+        lightbox.classList.add("active");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+
+    /* =====================================================
+       CLOSE MENU
+       ===================================================== */
+
+    function closeMenu(){
+
+        lightbox.classList.remove("active");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    /* =====================================================
+       CLICK MENU IMAGE
+       ===================================================== */
+
+    cards.forEach(function(card,index){
+
+        card.addEventListener("click",function(){
+
+            openMenu(index);
+
+        });
+
+    });
+
+
+    /* =====================================================
+       POPUP NEXT
+       ===================================================== */
+
+    lightboxNext.addEventListener(
+        "click",
+        function(){
+
+            if(currentIndex >= cards.length - 1){
+
+                currentIndex = 0;
+
+            }else{
+
+                currentIndex++;
+
+            }
+
+            openMenu(currentIndex);
+
+        }
+    );
+
+
+    /* =====================================================
+       POPUP PREVIOUS
+       ===================================================== */
+
+    lightboxPrev.addEventListener(
+        "click",
+        function(){
+
+            if(currentIndex <= 0){
+
+                currentIndex =
+                    cards.length - 1;
+
+            }else{
+
+                currentIndex--;
+
+            }
+
+            openMenu(currentIndex);
+
+        }
+    );
+
+
+    /* =====================================================
+       CLOSE BUTTON
+       ===================================================== */
+
+    close.addEventListener(
+        "click",
+        closeMenu
+    );
+
+
+    /* =====================================================
+       CLICK OUTSIDE IMAGE TO CLOSE
+       ===================================================== */
+
+    lightbox.addEventListener(
+        "click",
+        function(e){
+
+            if(e.target === lightbox){
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESC KEY
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function(e){
+
+            if(!lightbox.classList.contains("active")){
+
+                return;
+
+            }
+
+
+            if(e.key === "Escape"){
+
+                closeMenu();
+
+            }
+
+
+            if(e.key === "ArrowRight"){
+
+                lightboxNext.click();
+
+            }
+
+
+            if(e.key === "ArrowLeft"){
+
+                lightboxPrev.click();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       AUTOMATIC PREVIEW SLIDE
+       ===================================================== */
+
+    function startAuto(){
+
+        autoSlide =
+            setInterval(function(){
+
+                moveSlider(
+                    currentIndex + 1
+                );
+
+            },4500);
+
+    }
+
+
+    function stopAuto(){
+
+        clearInterval(autoSlide);
+
+    }
+
+
+    function restartAuto(){
+
+        stopAuto();
+
+        startAuto();
+
+    }
+
+
+    /* =====================================================
+       PAUSE WHILE MOUSE IS OVER SLIDER
+       ===================================================== */
+
+    track.addEventListener(
+        "mouseenter",
+        stopAuto
+    );
+
+    track.addEventListener(
+        "mouseleave",
+        startAuto
+    );
+
+
+    /* =====================================================
+       TOUCH PAUSE
+       ===================================================== */
+
+    track.addEventListener(
+        "touchstart",
+        stopAuto,
+        {passive:true}
+    );
+
+    track.addEventListener(
+        "touchend",
+        restartAuto,
+        {passive:true}
+    );
+
+
+    /* =====================================================
+       START
+       ===================================================== */
+
+    startAuto();
+
+})();
+
+</script>
+
+</section>
 <div style="width:100%; padding:95px 18px; background:linear-gradient(180deg,#f6f6f6,#ffffff); font-family:'Times New Roman', serif; overflow:hidden;">
 
     <!-- TOP SEO HEADER -->
