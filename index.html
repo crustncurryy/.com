@@ -2690,66 +2690,8 @@ body.cnc-menu-open {
 
 </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const openBtn = document.getElementById("cncOpenMenu");
-    const closeBtn = document.getElementById("cncCloseMenu");
-    const sidebar = document.getElementById("cncMobileSidebar");
-    const overlay = document.getElementById("cncSidebarOverlay");
-
-    if (!openBtn || !sidebar) return;
-
-    // OPEN SIDEBAR
-    openBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        sidebar.classList.add("open");
-
-        if (overlay) {
-            overlay.classList.add("open");
-        }
-    });
-
-    // CLOSE SIDEBAR
-    if (closeBtn) {
-        closeBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            sidebar.classList.remove("open");
-
-            if (overlay) {
-                overlay.classList.remove("open");
-            }
-        });
-    }
-
-    // CLOSE WHEN CLICKING OVERLAY
-    if (overlay) {
-        overlay.addEventListener("click", function () {
-            sidebar.classList.remove("open");
-            overlay.classList.remove("open");
-        });
-    }
-
-});
-</script>
 
 
-Your menu button **must have**:
-
-```html
-id="cncOpenMenu"
-```
-
-and your sidebar must have:
-
-```html
-id="cncMobileSidebar"
-```
-
-This JavaScript does **not** use BootstrapMade's `.mobile-nav-toggle`, so it won't conflict with your existing `main.js`.
 
 <!-- =========================================================
      CRUST N CURRY HERO
