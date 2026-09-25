@@ -1762,14 +1762,8 @@ body.cnc-menu-open {
 
         </div>
 
-        <!-- SLIDES -->
-<!-- =========================================================
-     CRUST N CURRY — PREMIUM RESPONSIVE HERO
-     Desktop: Text Left / Framed Image Right
-     Mobile: Text Top / Full Image Below
-========================================================= -->
 
-```html
+
 <style>
 
 /* =========================================================
@@ -2650,19 +2644,19 @@ body.cnc-menu-open {
     }
 
     .cnc-floating-description{
-        font-size:9.5px;
+        font-size:16px;
 
         max-width:315px;
     }
 
     .cnc-floating-highlight{
-        font-size:6.5px;
+        font-size:15px;
     }
 
     .cnc-floating-btn{
-        min-height:36px;
+        min-height:56px;
 
-        font-size:8px;
+        font-size:14px;
 
         padding:0 10px;
     }
@@ -2696,6 +2690,66 @@ body.cnc-menu-open {
 
 </style>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const openBtn = document.getElementById("cncOpenMenu");
+    const closeBtn = document.getElementById("cncCloseMenu");
+    const sidebar = document.getElementById("cncMobileSidebar");
+    const overlay = document.getElementById("cncSidebarOverlay");
+
+    if (!openBtn || !sidebar) return;
+
+    // OPEN SIDEBAR
+    openBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        sidebar.classList.add("open");
+
+        if (overlay) {
+            overlay.classList.add("open");
+        }
+    });
+
+    // CLOSE SIDEBAR
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            sidebar.classList.remove("open");
+
+            if (overlay) {
+                overlay.classList.remove("open");
+            }
+        });
+    }
+
+    // CLOSE WHEN CLICKING OVERLAY
+    if (overlay) {
+        overlay.addEventListener("click", function () {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("open");
+        });
+    }
+
+});
+</script>
+
+
+Your menu button **must have**:
+
+```html
+id="cncOpenMenu"
+```
+
+and your sidebar must have:
+
+```html
+id="cncMobileSidebar"
+```
+
+This JavaScript does **not** use BootstrapMade's `.mobile-nav-toggle`, so it won't conflict with your existing `main.js`.
 
 <!-- =========================================================
      CRUST N CURRY HERO
@@ -2933,20 +2987,12 @@ body.cnc-menu-open {
     </div>
 
 </section>
-```
 
-**Important:** I removed the duplicate `.cnc-food-13` entries from your old version. Each of the 17 images now has its **own position**, so they won't all stack on top of each other.
-
-I also removed `.cnc-food-name` completely, so **no image names appear at all**.
-
-Most importantly for your sidebar, the food layer has `pointer-events:none`, and I removed `isolation:isolate` from the hero. Your sidebar can therefore stay above it and remain clickable.
-
-<!-- PREMIUM HERO + SERVICES SECTION -->
 
 <div style="
 position:relative;
 overflow:hidden;
-padding:90px 5% 60px 5%;
+padding:60px 5% 60px 5%;
 background:
 linear-gradient(135deg,#fff,#fff7f3,#ffffff);
 font-family:'Poppins',sans-serif;
