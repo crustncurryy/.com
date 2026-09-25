@@ -1032,14 +1032,7 @@ body {
 /* =========================================================
    SIDEBAR NAVIGATION
 ========================================================= */
-.sidebar{
-    z-index:99999 !important;
-}
-    #sidebarToggle{
-    position:relative;
-    z-index:100000 !important;
-    pointer-events:auto !important;
-}
+
 .cnc-sidebar-menu {
     display: flex;
 
@@ -1762,66 +1755,72 @@ body.cnc-menu-open {
 
         </div>
 
-
+        <!-- SLIDES -->
+<!-- =========================================================
+     CRUST N CURRY — PREMIUM RESPONSIVE HERO
+     Desktop: Text Left / Framed Image Right
+     Mobile: Text Top / Full Image Below
+========================================================= -->
 
 <style>
 
 /* =========================================================
-   CRUST N CURRY — 17 FLOATING FOOD IMAGES
-   SIDEBAR-SAFE VERSION
+   CRUST N CURRY — 13 FLOATING FOOD HERO
+   Lightweight • Responsive • Smooth • Interactive
 ========================================================= */
 
 .cnc-floating-hero{
     --red:#8f101d;
+    --deep:#26070b;
     --gold:#e4a52b;
+    --cream:#fff8ef;
 
     position:relative;
     width:100%;
-    height:560px;
-    min-height:0;
-
+    min-height:680px;
     overflow:hidden;
 
     background:
         radial-gradient(
             circle at 50% 42%,
-            rgba(228,165,43,.12),
-            transparent 35%
+            rgba(228,165,43,.13),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(143,16,29,.22),
+            transparent 30%
         ),
         linear-gradient(
             135deg,
-            #170407,
-            #3b0910 50%,
-            #160407
+            #170407 0%,
+            #3b0910 48%,
+            #160407 100%
         );
 
     color:#fff;
-
-    /*
-      IMPORTANT:
-      Do NOT use isolation:isolate here.
-      This prevents the hero from creating a
-      competing stacking context with the sidebar.
-    */
-
-    z-index:1;
+    isolation:isolate;
 }
 
 
 /* =========================================================
-   SOFT LIGHT
+   SOFT BACKGROUND LIGHT
 ========================================================= */
 
 .cnc-floating-hero::before{
     content:"";
     position:absolute;
-    inset:0;
+    width:520px;
+    height:520px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
 
     background:
         radial-gradient(
-            circle at 50% 48%,
-            rgba(228,165,43,.10),
-            transparent 42%
+            circle,
+            rgba(228,165,43,.12),
+            transparent 68%
         );
 
     pointer-events:none;
@@ -1830,34 +1829,27 @@ body.cnc-menu-open {
 
 
 /* =========================================================
-   CENTER CONTENT
+   MAIN CONTENT — EVERYTHING CENTERED
 ========================================================= */
 
 .cnc-floating-content{
     position:relative;
-
-    z-index:2;
+    z-index:10;
 
     width:100%;
-    max-width:900px;
+    max-width:850px;
 
     margin:0 auto;
 
-    height:100%;
-
     padding:
-        55px 18px
-        30px;
-
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:flex-start;
+        78px 25px
+        280px;
 
     text-align:center;
 
-    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 
@@ -1867,77 +1859,71 @@ body.cnc-menu-open {
 
 .cnc-floating-label{
     display:inline-flex;
-
     align-items:center;
     justify-content:center;
+    gap:9px;
 
-    gap:8px;
+    padding:8px 15px;
+    margin-bottom:18px;
 
-    padding:7px 13px;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:100px;
 
-    margin-bottom:15px;
+    background:rgba(255,255,255,.07);
 
-    border:1px solid rgba(255,255,255,.20);
-
-    border-radius:50px;
-
-    background:rgba(255,255,255,.06);
+    color:#fff;
 
     font-family:"Poppins",sans-serif;
-
     font-size:10px;
-
     font-weight:700;
 
-    letter-spacing:1.4px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
 
-    position:relative;
-
-    z-index:3;
+    backdrop-filter:blur(8px);
 }
 
 .cnc-floating-label i{
-    width:6px;
-    height:6px;
+    width:7px;
+    height:7px;
 
     border-radius:50%;
 
     background:#e4a52b;
+
+    box-shadow:
+        0 0 12px rgba(228,165,43,.75);
 }
 
 
 /* =========================================================
-   TITLE
+   MAIN TITLE
 ========================================================= */
 
 .cnc-floating-title{
-    position:relative;
-
-    z-index:2;
-
     margin:0;
 
     color:#fff !important;
 
     font-family:"Poppins",sans-serif;
 
-    font-size:clamp(42px,7vw,72px);
+    font-size:
+        clamp(38px,5.5vw,68px);
 
-    line-height:.98;
+    line-height:1.02;
 
     font-weight:800;
 
-    letter-spacing:-2.5px;
+    letter-spacing:-2px;
 
     text-align:center;
 
     text-shadow:
-        0 4px 22px rgba(0,0,0,.45);
+        0 5px 25px rgba(0,0,0,.35);
 }
 
 .cnc-floating-title strong{
     color:#f2c15a;
-
     font-weight:800;
 }
 
@@ -1947,27 +1933,26 @@ body.cnc-menu-open {
 ========================================================= */
 
 .cnc-floating-description{
-    position:relative;
-
-    z-index:2;
-
     width:100%;
-
     max-width:680px;
 
     margin:
-        17px auto
-        20px;
+        19px auto
+        25px;
 
-    color:rgba(255,255,255,.88);
+    color:rgba(255,255,255,.87);
 
     font-family:"Open Sans",sans-serif;
 
-    font-size:clamp(13px,1.4vw,17px);
+    font-size:
+        clamp(13px,1.35vw,17px);
 
-    line-height:1.55;
+    line-height:1.65;
 
     text-align:center;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.3);
 }
 
 
@@ -1976,35 +1961,38 @@ body.cnc-menu-open {
 ========================================================= */
 
 .cnc-floating-highlights{
-    position:relative;
-
-    z-index:2;
-
     display:flex;
-
     flex-wrap:wrap;
 
     justify-content:center;
+    align-items:center;
 
-    gap:7px;
+    gap:8px;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .cnc-floating-highlight{
-    padding:6px 10px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:7px 11px;
 
     border-radius:8px;
 
-    background:rgba(255,255,255,.07);
+    background:rgba(255,255,255,.075);
 
-    border:1px solid rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.14);
+
+    color:#fff;
 
     font-family:"Open Sans",sans-serif;
 
-    font-size:10px;
-
+    font-size:11px;
     font-weight:600;
+
+    backdrop-filter:blur(5px);
 }
 
 
@@ -2013,41 +2001,37 @@ body.cnc-menu-open {
 ========================================================= */
 
 .cnc-floating-actions{
-    position:relative;
-
-    z-index:2;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
-    gap:10px;
-
     flex-wrap:wrap;
+
+    gap:12px;
 }
 
 .cnc-floating-btn{
-    min-height:45px;
+    min-height:49px;
 
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
 
-    padding:0 19px;
+    padding:0 22px;
 
-    border-radius:8px;
+    border-radius:9px;
 
     text-decoration:none !important;
 
     font-family:"Poppins",sans-serif;
 
-    font-size:11px;
-
+    font-size:12px;
     font-weight:700;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
 }
 
 .cnc-floating-btn-primary{
@@ -2061,7 +2045,16 @@ body.cnc-menu-open {
         );
 
     box-shadow:
-        0 7px 20px rgba(228,165,43,.20);
+        0 10px 28px rgba(228,165,43,.22);
+}
+
+.cnc-floating-btn-primary:hover{
+    color:#241005 !important;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 32px rgba(228,165,43,.32);
 }
 
 .cnc-floating-btn-secondary{
@@ -2069,64 +2062,69 @@ body.cnc-menu-open {
 
     background:rgba(255,255,255,.07);
 
-    border:1px solid rgba(255,255,255,.22);
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(7px);
+}
+
+.cnc-floating-btn-secondary:hover{
+    color:#1b0507 !important;
+
+    background:#fff;
+
+    transform:translateY(-3px);
 }
 
 
 /* =========================================================
-   FOOD CLOUD
-   SIDEBAR SAFE
+   FLOATING FOOD AREA
 ========================================================= */
 
 .cnc-food-cloud{
     position:absolute;
 
-    inset:0;
+    left:0;
+    right:0;
+    bottom:0;
 
     width:100%;
-    height:100%;
+    height:310px;
 
-    z-index:4;
-
-    /*
-      VERY IMPORTANT:
-      Food can never capture clicks.
-      Sidebar/menu remains clickable.
-    */
+    z-index:5;
 
     pointer-events:none;
-
-    overflow:hidden;
 }
 
 
 /* =========================================================
-   FOOD ITEMS
+   EACH FOOD ITEM
 ========================================================= */
 
 .cnc-food-item{
     position:absolute;
 
-    width:105px;
-    height:105px;
+    width:86px;
+    height:115px;
 
     display:flex;
-
+    flex-direction:column;
     align-items:center;
+    justify-content:flex-start;
 
-    justify-content:center;
-
-    pointer-events:none;
+    pointer-events:auto;
 
     will-change:transform;
 
     animation:
-        cncFoodFloat
-        var(--duration)
+        cncFloat var(--duration)
         ease-in-out
         infinite;
 
     animation-delay:var(--delay);
+
+    transform:translate3d(0,0,0);
+
+    cursor:pointer;
 }
 
 
@@ -2135,183 +2133,216 @@ body.cnc-menu-open {
 ========================================================= */
 
 .cnc-food-image{
-    width:96px;
-    height:96px;
+    width:76px;
+    height:76px;
 
-    object-fit:cover;
+    padding:5px;
+
+    object-fit:contain;
 
     display:block;
 
     border-radius:50%;
 
-    background:#fff;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.16),
+            rgba(255,255,255,.04) 65%,
+            transparent 70%
+        );
 
-    padding:4px;
-
-    border:2px solid rgba(255,255,255,.32);
+    border:1px solid rgba(255,255,255,.18);
 
     box-shadow:
-        0 7px 18px rgba(0,0,0,.35);
+        0 8px 20px rgba(0,0,0,.30);
 
-    backface-visibility:hidden;
-
-    /*
-      Slight transparency so the text underneath
-      remains visible.
-    */
-
-    opacity:.78;
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease;
 }
 
 
 /* =========================================================
-   17 RANDOM POSITIONS
+   TEXT UNDER IMAGE
+========================================================= */
+
+.cnc-food-name{
+    position:relative;
+
+    margin-top:7px;
+
+    padding:4px 8px;
+
+    max-width:110px;
+
+    border-radius:20px;
+
+    background:rgba(15,3,5,.82);
+
+    border:1px solid rgba(255,255,255,.13);
+
+    color:#fff;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:9px;
+    font-weight:700;
+
+    line-height:1.2;
+
+    text-align:center;
+
+    white-space:nowrap;
+
+    opacity:.72;
+
+    transform:translateY(2px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        background .25s ease;
+}
+
+
+/* =========================================================
+   INTERACTION
+========================================================= */
+
+.cnc-food-item:hover{
+    z-index:30;
+}
+
+.cnc-food-item:hover .cnc-food-image{
+    transform:
+        translate3d(0,-6px,0)
+        scale(1.12);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.42),
+        0 0 20px rgba(228,165,43,.18);
+}
+
+.cnc-food-item:hover .cnc-food-name{
+    opacity:1;
+
+    transform:
+        translateY(-1px)
+        scale(1.04);
+
+    background:rgba(143,16,29,.94);
+
+    border-color:
+        rgba(242,193,90,.55);
+}
+
+
+/* =========================================================
+   13 POSITIONS
+   Spread across the entire bottom
 ========================================================= */
 
 .cnc-food-1{
     left:2%;
-    top:37%;
-
-    --duration:4.8s;
+    bottom:42px;
+    --duration:8s;
     --delay:-1s;
 }
 
 .cnc-food-2{
     left:10%;
-    top:18%;
-
-    --duration:5.2s;
-    --delay:-3s;
+    bottom:128px;
+    --duration:9.5s;
+    --delay:-4s;
 }
 
 .cnc-food-3{
-    left:19%;
-    top:51%;
-
-    --duration:4.6s;
-    --delay:-2s;
+    left:18%;
+    bottom:48px;
+    --duration:8.5s;
+    --delay:-2.5s;
 }
 
 .cnc-food-4{
-    left:28%;
-    top:25%;
-
-    --duration:5.5s;
-    --delay:-4s;
+    left:27%;
+    bottom:142px;
+    --duration:10s;
+    --delay:-6s;
 }
 
 .cnc-food-5{
-    left:37%;
-    top:58%;
-
-    --duration:4.9s;
-    --delay:-2.5s;
-}
-
-.cnc-food-6{
-    left:45%;
-    top:17%;
-
-    --duration:5.7s;
-    --delay:-5s;
-}
-
-.cnc-food-7{
-    left:53%;
-    top:48%;
-
-    --duration:4.7s;
-    --delay:-1.5s;
-}
-
-.cnc-food-8{
-    left:61%;
-    top:23%;
-
-    --duration:5.3s;
-    --delay:-3.5s;
-}
-
-.cnc-food-9{
-    left:69%;
-    top:55%;
-
-    --duration:4.8s;
-    --delay:-2s;
-}
-
-.cnc-food-10{
-    left:77%;
-    top:21%;
-
-    --duration:5.6s;
-    --delay:-4.5s;
-}
-
-.cnc-food-11{
-    left:86%;
-    top:40%;
-
-    --duration:5s;
-    --delay:-1s;
-}
-
-.cnc-food-12{
-    left:73%;
-    top:67%;
-
-    --duration:5.4s;
+    left:35%;
+    bottom:55px;
+    --duration:9s;
     --delay:-3s;
 }
 
-.cnc-food-13{
-    left:12%;
-    top:67%;
-
-    --duration:4.9s;
-    --delay:-4s;
+.cnc-food-6{
+    left:43%;
+    bottom:128px;
+    --duration:10.5s;
+    --delay:-7s;
 }
 
-.cnc-food-14{
-    left:31%;
-    top:67%;
-
-    --duration:5.8s;
-    --delay:-2.5s;
+.cnc-food-7{
+    left:51%;
+    bottom:43px;
+    --duration:8.8s;
+    --delay:-1.8s;
 }
 
-.cnc-food-15{
-    left:49%;
-    top:65%;
-
-    --duration:5.1s;
+.cnc-food-8{
+    left:59%;
+    bottom:135px;
+    --duration:9.8s;
     --delay:-5s;
 }
 
-.cnc-food-16{
-    left:66%;
-    top:70%;
-
-    --duration:4.7s;
-    --delay:-3.5s;
+.cnc-food-9{
+    left:67%;
+    bottom:50px;
+    --duration:8.7s;
+    --delay:-3.8s;
 }
 
-.cnc-food-17{
-    left:88%;
-    top:65%;
+.cnc-food-10{
+    left:75%;
+    bottom:145px;
+    --duration:10.2s;
+    --delay:-7.5s;
+}
 
-    --duration:5.5s;
-    --delay:-1.5s;
+.cnc-food-11{
+    left:82%;
+    bottom:52px;
+    --duration:9.2s;
+    --delay:-2s;
+}
+
+.cnc-food-12{
+    left:89%;
+    bottom:125px;
+    --duration:10s;
+    --delay:-5.8s;
+}
+
+.cnc-food-13{
+    left:94%;
+    bottom:42px;
+    --duration:8.6s;
+    --delay:-4.2s;
 }
 
 
 /* =========================================================
-   LIGHTWEIGHT FLOAT
+   SLOW NATURAL FLOAT
+   Uses transform only — lightweight on mobile
 ========================================================= */
 
-@keyframes cncFoodFloat{
+@keyframes cncFloat{
 
-    0%,100%{
+    0%{
         transform:
             translate3d(0,0,0)
             rotate(-2deg);
@@ -2319,43 +2350,80 @@ body.cnc-menu-open {
 
     25%{
         transform:
-            translate3d(7px,-10px,0)
-            rotate(2deg);
+            translate3d(4px,-12px,0)
+            rotate(1deg);
     }
 
     50%{
         transform:
-            translate3d(-6px,-18px,0)
-            rotate(-2deg);
+            translate3d(-3px,-20px,0)
+            rotate(2deg);
     }
 
     75%{
         transform:
-            translate3d(6px,-8px,0)
-            rotate(1deg);
+            translate3d(5px,-10px,0)
+            rotate(-1deg);
+    }
+
+    100%{
+        transform:
+            translate3d(0,0,0)
+            rotate(-2deg);
     }
 }
 
 
 /* =========================================================
-   DECORATIVE DOTS
+   SUBTLE GOLD PARTICLES
 ========================================================= */
 
 .cnc-gold-dot{
     position:absolute;
 
-    width:3px;
-    height:3px;
+    width:4px;
+    height:4px;
 
     border-radius:50%;
 
     background:#e4a52b;
 
-    opacity:.4;
+    opacity:.35;
 
     pointer-events:none;
 
-    z-index:1;
+    animation:
+        cncDotFloat 7s ease-in-out infinite;
+}
+
+.cnc-gold-dot:nth-child(1){
+    left:7%;
+    top:25%;
+    animation-delay:-2s;
+}
+
+.cnc-gold-dot:nth-child(2){
+    left:92%;
+    top:32%;
+    animation-delay:-5s;
+}
+
+.cnc-gold-dot:nth-child(3){
+    left:48%;
+    top:18%;
+    animation-delay:-3s;
+}
+
+@keyframes cncDotFloat{
+    0%,100%{
+        transform:translate3d(0,0,0);
+        opacity:.25;
+    }
+
+    50%{
+        transform:translate3d(5px,-12px,0);
+        opacity:.55;
+    }
 }
 
 
@@ -2363,46 +2431,57 @@ body.cnc-menu-open {
    TABLET
 ========================================================= */
 
-@media(max-width:991px){
+@media (max-width:991px){
 
     .cnc-floating-hero{
-        height:540px;
+        min-height:650px;
     }
 
     .cnc-floating-content{
         padding:
-            48px 15px
-            20px;
+            65px 20px
+            260px;
     }
 
     .cnc-floating-title{
-        font-size:clamp(38px,7vw,60px);
+        font-size:clamp(36px,6vw,55px);
+    }
+
+    .cnc-food-cloud{
+        height:275px;
     }
 
     .cnc-food-item{
-        width:82px;
-        height:82px;
+        width:70px;
+        height:100px;
     }
 
     .cnc-food-image{
-        width:76px;
-        height:76px;
+        width:62px;
+        height:62px;
     }
 
-    .cnc-food-1{left:0%;}
-    .cnc-food-2{left:8%;}
-    .cnc-food-3{left:17%;}
-    .cnc-food-4{left:26%;}
-    .cnc-food-5{left:35%;}
-    .cnc-food-6{left:44%;}
-    .cnc-food-7{left:53%;}
-    .cnc-food-8{left:62%;}
-    .cnc-food-9{left:71%;}
-    .cnc-food-10{left:80%;}
+    .cnc-food-name{
+        font-size:8px;
+        padding:3px 6px;
+    }
 
-    .cnc-food-11{
+    /* Bring outer items slightly inward */
+    .cnc-food-1{left:1%;}
+    .cnc-food-2{left:9%;}
+    .cnc-food-3{left:17%;}
+    .cnc-food-4{left:25%;}
+    .cnc-food-5{left:33%;}
+    .cnc-food-6{left:41%;}
+    .cnc-food-7{left:49%;}
+    .cnc-food-8{left:57%;}
+    .cnc-food-9{left:65%;}
+    .cnc-food-10{left:73%;}
+    .cnc-food-11{left:81%;}
+    .cnc-food-12{left:88%;}
+    .cnc-food-13{
         left:auto;
-        right:0%;
+        right:1%;
     }
 }
 
@@ -2411,213 +2490,198 @@ body.cnc-menu-open {
    MOBILE
 ========================================================= */
 
-@media(max-width:575px){
+@media (max-width:575px){
 
     .cnc-floating-hero{
-        height:540px;
+        min-height:650px;
     }
 
     .cnc-floating-content{
         padding:
-            38px 12px
-            15px;
+            48px 15px
+            245px;
     }
 
     .cnc-floating-label{
         font-size:8px;
-
-        padding:6px 10px;
-
-        margin-bottom:12px;
+        padding:7px 11px;
+        margin-bottom:14px;
     }
 
     .cnc-floating-title{
-        font-size:clamp(32px,10vw,43px);
+        font-size:
+            clamp(30px,9vw,42px);
 
-        line-height:.98;
+        line-height:1.05;
 
-        letter-spacing:-1.4px;
+        letter-spacing:-1px;
     }
 
     .cnc-floating-description{
-        max-width:350px;
+        max-width:390px;
 
         margin:
-            13px auto
-            15px;
+            14px auto
+            18px;
 
         font-size:11px;
-
-        line-height:1.45;
+        line-height:1.5;
     }
 
     .cnc-floating-highlights{
-        gap:4px;
-
-        margin-bottom:15px;
+        gap:5px;
+        margin-bottom:18px;
     }
 
     .cnc-floating-highlight{
+        font-size:8px;
         padding:5px 7px;
-
-        font-size:7px;
     }
 
     .cnc-floating-actions{
-        gap:7px;
+        gap:8px;
     }
 
     .cnc-floating-btn{
-        min-height:39px;
-
-        padding:0 12px;
-
-        font-size:8.5px;
+        min-height:41px;
+        padding:0 13px;
+        font-size:9px;
+        border-radius:7px;
     }
 
 
-    /* MOBILE FOOD */
+    /* -----------------------------------------
+       FOOD CLOUD
+    ----------------------------------------- */
+
+    .cnc-food-cloud{
+        height:235px;
+    }
 
     .cnc-food-item{
-        width:65px;
-        height:65px;
+        width:52px;
+        height:82px;
     }
 
     .cnc-food-image{
-        width:61px;
-        height:61px;
+        width:47px;
+        height:47px;
 
         padding:3px;
 
-        border-width:1.5px;
-
-        opacity:.76;
-
         box-shadow:
-            0 5px 12px rgba(0,0,0,.30);
+            0 5px 14px rgba(0,0,0,.28);
+    }
+
+    .cnc-food-name{
+        margin-top:5px;
+
+        max-width:65px;
+
+        padding:3px 4px;
+
+        font-size:6.5px;
+
+        white-space:normal;
+
+        opacity:.82;
     }
 
 
-    /* MOBILE POSITIONS */
+    /* Compact positions */
 
     .cnc-food-1{
-        left:-2%;
-        top:38%;
+        left:1%;
+        bottom:28px;
     }
 
     .cnc-food-2{
-        left:10%;
-        top:19%;
+        left:9%;
+        bottom:103px;
     }
 
     .cnc-food-3{
-        left:23%;
-        top:51%;
+        left:17%;
+        bottom:30px;
     }
 
     .cnc-food-4{
-        left:35%;
-        top:27%;
+        left:25%;
+        bottom:115px;
     }
 
     .cnc-food-5{
-        left:48%;
-        top:57%;
+        left:33%;
+        bottom:27px;
     }
 
     .cnc-food-6{
-        left:60%;
-        top:18%;
+        left:41%;
+        bottom:105px;
     }
 
     .cnc-food-7{
-        left:74%;
-        top:47%;
+        left:49%;
+        bottom:27px;
     }
 
     .cnc-food-8{
-        left:5%;
-        top:65%;
+        left:57%;
+        bottom:110px;
     }
 
     .cnc-food-9{
-        left:27%;
-        top:67%;
+        left:65%;
+        bottom:28px;
     }
 
     .cnc-food-10{
-        left:43%;
-        top:34%;
+        left:73%;
+        bottom:108px;
     }
 
     .cnc-food-11{
-        left:auto;
-        right:-2%;
-        top:26%;
+        left:81%;
+        bottom:28px;
     }
 
     .cnc-food-12{
-        left:auto;
-        right:7%;
-        top:66%;
+        left:87%;
+        bottom:105px;
     }
 
     .cnc-food-13{
-        left:67%;
-        top:68%;
+        left:auto;
+        right:1%;
+        bottom:28px;
     }
 
-    .cnc-food-14{
-        left:17%;
-        top:35%;
-    }
+    /* Reduce movement distance on phones */
 
-    .cnc-food-15{
-        left:55%;
-        top:70%;
-    }
-
-    .cnc-food-16{
-        left:82%;
-        top:58%;
-    }
-
-    .cnc-food-17{
-        left:2%;
-        top:48%;
-    }
-
-
-    /* MOBILE SPEED */
-
-    .cnc-food-item{
-        animation-duration:3.8s;
-    }
-
-    @keyframes cncFoodFloat{
+    @keyframes cncFloat{
 
         0%,100%{
             transform:
                 translate3d(0,0,0)
-                rotate(-2deg);
+                rotate(-1deg);
         }
 
         25%{
             transform:
-                translate3d(4px,-7px,0)
-                rotate(2deg);
+                translate3d(2px,-7px,0)
+                rotate(1deg);
         }
 
         50%{
             transform:
-                translate3d(-4px,-13px,0)
-                rotate(-2deg);
+                translate3d(-2px,-12px,0)
+                rotate(1deg);
         }
 
         75%{
             transform:
-                translate3d(4px,-6px,0)
-                rotate(1deg);
+                translate3d(2px,-6px,0)
+                rotate(-1deg);
         }
     }
 }
@@ -2627,100 +2691,88 @@ body.cnc-menu-open {
    VERY SMALL PHONES
 ========================================================= */
 
-@media(max-width:380px){
+@media (max-width:380px){
 
     .cnc-floating-hero{
-        height:520px;
+        min-height:620px;
     }
 
     .cnc-floating-content{
         padding:
-            34px 10px
-            10px;
+            42px 12px
+            220px;
     }
 
     .cnc-floating-title{
-        font-size:29px;
+        font-size:28px;
     }
 
     .cnc-floating-description{
-        font-size:16px;
-
-        max-width:315px;
+        font-size:10px;
     }
 
     .cnc-floating-highlight{
-        font-size:15px;
+        font-size:7px;
     }
 
-    .cnc-floating-btn{
-        min-height:56px;
-
-        font-size:14px;
-
-        padding:0 10px;
+    .cnc-food-cloud{
+        height:215px;
     }
 
     .cnc-food-item{
-        width:55px;
-        height:55px;
+        width:45px;
+        height:72px;
     }
 
     .cnc-food-image{
-        width:52px;
-        height:52px;
+        width:41px;
+        height:41px;
     }
 
-    .cnc-food-item{
-        animation-duration:3.5s;
+    .cnc-food-name{
+        font-size:6px;
+        max-width:53px;
     }
 }
 
 
 /* =========================================================
-   REDUCE MOTION
+   ACCESSIBILITY / PERFORMANCE
 ========================================================= */
 
-@media(prefers-reduced-motion:reduce){
+@media (prefers-reduced-motion:reduce){
 
-    .cnc-food-item{
+    .cnc-food-item,
+    .cnc-gold-dot{
         animation:none !important;
+    }
+
+    .cnc-food-image,
+    .cnc-food-name,
+    .cnc-floating-btn{
+        transition:none !important;
     }
 }
 
 </style>
 
 
-
-
 <!-- =========================================================
-     CRUST N CURRY HERO
+     CRUST N CURRY — FLOATING HERO
 ========================================================= -->
 
-<section
-    class="cnc-floating-hero"
-    id="cncFloatingHero"
->
+<section class="cnc-floating-hero"
+         id="cncFloatingHero">
 
-    <!-- DECORATIVE DOTS -->
-
-    <span
-        class="cnc-gold-dot"
-        style="left:7%;top:25%;"
-    ></span>
-
-    <span
-        class="cnc-gold-dot"
-        style="left:92%;top:32%;"
-    ></span>
-
-    <span
-        class="cnc-gold-dot"
-        style="left:48%;top:18%;"
-    ></span>
+    <!-- Subtle decorative dots -->
+    <span class="cnc-gold-dot"></span>
+    <span class="cnc-gold-dot"></span>
+    <span class="cnc-gold-dot"></span>
 
 
-    <!-- CENTER CONTENT -->
+    <!-- =====================================================
+         CENTER TEXT
+    ====================================================== -->
 
     <div class="cnc-floating-content">
 
@@ -2764,17 +2816,13 @@ body.cnc-menu-open {
 
         <div class="cnc-floating-actions">
 
-            <a
-                href="q.html"
-                class="cnc-floating-btn cnc-floating-btn-primary"
-            >
+            <a href="q.html"
+               class="cnc-floating-btn cnc-floating-btn-primary">
                 🍕 Explore Our Menu
             </a>
 
-            <a
-                href="tel:+447863208938"
-                class="cnc-floating-btn cnc-floating-btn-secondary"
-            >
+            <a href="tel:+447863208938"
+               class="cnc-floating-btn cnc-floating-btn-secondary">
                 📞 Call To Order
             </a>
 
@@ -2784,146 +2832,204 @@ body.cnc-menu-open {
 
 
     <!-- =====================================================
-         17 FOOD IMAGES
-         NO NAMES / NO LABELS
+         13 FLOATING FOOD IMAGES
     ====================================================== -->
 
     <div class="cnc-food-cloud">
 
+
+        <!-- 1 -->
         <div class="cnc-food-item cnc-food-1">
+
             <img
                 class="cnc-food-image"
-                src="1.jpg"
-                alt=""
-            >
+                src="parmesan.jpg"
+                alt="Parmesan">
+
+            <span class="cnc-food-name">
+                🧀 Parmesan
+            </span>
+
         </div>
 
+
+        <!-- 2 -->
         <div class="cnc-food-item cnc-food-2">
+
             <img
                 class="cnc-food-image"
-                src="2.jpg"
-                alt=""
-            >
+                src="garlic-bread.jpg"
+                alt="Garlic Bread">
+
+            <span class="cnc-food-name">
+                🧄 Garlic Bread
+            </span>
+
         </div>
 
+
+        <!-- 3 -->
         <div class="cnc-food-item cnc-food-3">
+
             <img
                 class="cnc-food-image"
-                src="3.jpg"
-                alt=""
-            >
+                src="starters.jpg"
+                alt="Starters">
+
+            <span class="cnc-food-name">
+                🥘 Starters
+            </span>
+
         </div>
 
+
+        <!-- 4 -->
         <div class="cnc-food-item cnc-food-4">
+
             <img
                 class="cnc-food-image"
-                src="4.jpg"
-                alt=""
-            >
+                src="tandoori.jpg"
+                alt="Tandoori">
+
+            <span class="cnc-food-name">
+                🔥 Tandoori
+            </span>
+
         </div>
 
+
+        <!-- 5 -->
         <div class="cnc-food-item cnc-food-5">
+
             <img
                 class="cnc-food-image"
-                src="5.jpg"
-                alt=""
-            >
+                src="curries.jpg"
+                alt="Curries">
+
+            <span class="cnc-food-name">
+                🍛 Curries
+            </span>
+
         </div>
 
+
+        <!-- 6 -->
         <div class="cnc-food-item cnc-food-6">
+
             <img
                 class="cnc-food-image"
-                src="6.jpg"
-                alt=""
-            >
+                src="keema.jpg"
+                alt="Keema">
+
+            <span class="cnc-food-name">
+                🍲 Keema
+            </span>
+
         </div>
 
+
+        <!-- 7 -->
         <div class="cnc-food-item cnc-food-7">
+
             <img
                 class="cnc-food-image"
-                src="7.jpg"
-                alt=""
-            >
+                src="vegetable.jpg"
+                alt="Vegetable">
+
+            <span class="cnc-food-name">
+                🥗 Vegetable
+            </span>
+
         </div>
 
+
+        <!-- 8 -->
         <div class="cnc-food-item cnc-food-8">
+
             <img
                 class="cnc-food-image"
-                src="8.jpg"
-                alt=""
-            >
+                src="rice.jpg"
+                alt="Rice">
+
+            <span class="cnc-food-name">
+                🍚 Rice
+            </span>
+
         </div>
 
+
+        <!-- 9 -->
         <div class="cnc-food-item cnc-food-9">
+
             <img
                 class="cnc-food-image"
-                src="9.jpg"
-                alt=""
-            >
+                src="breads.jpg"
+                alt="Breads">
+
+            <span class="cnc-food-name">
+                🫓 Breads
+            </span>
+
         </div>
 
+
+        <!-- 10 -->
         <div class="cnc-food-item cnc-food-10">
+
             <img
                 class="cnc-food-image"
-                src="10.jpg"
-                alt=""
-            >
+                src="english.jpg"
+                alt="English Food">
+
+            <span class="cnc-food-name">
+                🍳 English
+            </span>
+
         </div>
 
+
+        <!-- 11 -->
         <div class="cnc-food-item cnc-food-11">
+
             <img
                 class="cnc-food-image"
-                src="11.jpg"
-                alt=""
-            >
+                src="drinks.jpg"
+                alt="Drinks">
+
+            <span class="cnc-food-name">
+                🥤 Drinks
+            </span>
+
         </div>
 
+
+        <!-- 12 -->
         <div class="cnc-food-item cnc-food-12">
+
             <img
                 class="cnc-food-image"
-                src="12.jpg"
-                alt=""
-            >
+                src="kids.jpg"
+                alt="Kids Menu">
+
+            <span class="cnc-food-name">
+                👶 Kids
+            </span>
+
         </div>
 
+
+        <!-- 13 -->
         <div class="cnc-food-item cnc-food-13">
-            <img
-                class="cnc-food-image"
-                src="13.jpg"
-                alt=""
-            >
-        </div>
 
-        <div class="cnc-food-item cnc-food-14">
             <img
                 class="cnc-food-image"
-                src="14.jpg"
-                alt=""
-            >
-        </div>
+                src="extras.jpg"
+                alt="Extras">
 
-        <div class="cnc-food-item cnc-food-15">
-            <img
-                class="cnc-food-image"
-                src="15.jpg"
-                alt=""
-            >
-        </div>
+            <span class="cnc-food-name">
+                ➕ Extras
+            </span>
 
-        <div class="cnc-food-item cnc-food-16">
-            <img
-                class="cnc-food-image"
-                src="16.jpg"
-                alt=""
-            >
-        </div>
-
-        <div class="cnc-food-item cnc-food-17">
-            <img
-                class="cnc-food-image"
-                src="17.jpg"
-                alt=""
-            >
         </div>
 
     </div>
@@ -2931,10 +3037,60 @@ body.cnc-menu-open {
 </section>
 
 
+<script>
+
+/* =========================================================
+   LIGHTWEIGHT TOUCH INTERACTION
+
+   On phones:
+   - tapping an item highlights it
+   - no expensive mouse tracking
+   - no continuous JavaScript animation
+========================================================= */
+
+(function(){
+
+    const foodItems =
+        document.querySelectorAll(
+            "#cncFloatingHero .cnc-food-item"
+        );
+
+    foodItems.forEach(function(item){
+
+        item.addEventListener(
+            "touchstart",
+            function(){
+
+                foodItems.forEach(function(other){
+
+                    if(other !== item){
+                        other.classList.remove(
+                            "cnc-food-selected"
+                        );
+                    }
+
+                });
+
+                item.classList.toggle(
+                    "cnc-food-selected"
+                );
+
+            },
+            { passive:true }
+        );
+
+    });
+
+})();
+
+</script>
+
+<!-- PREMIUM HERO + SERVICES SECTION -->
+
 <div style="
 position:relative;
 overflow:hidden;
-padding:60px 5% 60px 5%;
+padding:90px 5% 60px 5%;
 background:
 linear-gradient(135deg,#fff,#fff7f3,#ffffff);
 font-family:'Poppins',sans-serif;
