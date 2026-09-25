@@ -2683,7 +2683,69 @@ body.cnc-menu-open {
         animation:none !important;
     }
 }
+.cnc-food-item{
+    animation-duration:4.5s !important;
+}
+    .cnc-food-image{
+    opacity:.72;
+}
+    /* =========================================================
+   FINAL MOBILE / SPEED / OVERLAY ADJUSTMENTS
+========================================================= */
 
+/* Faster food movement */
+.cnc-food-item{
+    animation-duration:4.5s !important;
+}
+
+/* Slight transparency so text can be seen through food */
+.cnc-food-image{
+    opacity:.80;
+}
+
+/* Slightly more visible when interacting */
+.cnc-food-item:hover .cnc-food-image{
+    opacity:.92;
+}
+
+
+/* Remove unnecessary empty height */
+.cnc-floating-hero{
+    height:560px;
+    min-height:0;
+}
+
+
+/* Mobile */
+@media(max-width:575px){
+
+    .cnc-floating-hero{
+        height:540px;
+        min-height:0;
+    }
+
+    .cnc-food-item{
+        animation-duration:3.8s !important;
+    }
+
+    .cnc-food-image{
+        opacity:.78;
+    }
+}
+
+
+/* Very small phones */
+@media(max-width:380px){
+
+    .cnc-floating-hero{
+        height:520px;
+        min-height:0;
+    }
+
+    .cnc-food-item{
+        animation-duration:3.5s !important;
+    }
+}
 </style>
 
 
