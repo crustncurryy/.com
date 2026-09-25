@@ -6430,13 +6430,20 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
   "use strict";
 
+  /* =========================================================
+     EASY SPEED SETTINGS
+     ========================================================= */
+
+  const TARGET_TIME = 4000;      // Target stays for 4 seconds
+  const DECOY_TIME = 2200;       // Other foods stay for 2.2 seconds
+  const DECOY_DELAY = 1400;      // Time between new decoys
+
 
   /* =========================================================
      FOOD DATABASE
      ========================================================= */
 
   const foods = [
-
     { name: "Pizza", image: "1.jpg" },
     { name: "Kebab", image: "2.jpg" },
     { name: "Wraps", image: "3.jpg" },
@@ -6454,7 +6461,6 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
     { name: "Drinks", image: "15.jpg" },
     { name: "Kids", image: "16.jpg" },
     { name: "Extras", image: "17.jpg" }
-
   ];
 
 
@@ -6462,61 +6468,39 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
      ELEMENTS
      ========================================================= */
 
-  const stage =
-    document.getElementById("realStage");
+  const stage = document.getElementById("realStage");
 
-  const target =
-    document.getElementById("realTarget");
+  const target = document.getElementById("realTarget");
+  const targetSign = document.getElementById("realTargetSign");
 
-  const targetSign =
-    document.getElementById("realTargetSign");
+  const scoreElement = document.getElementById("realScore");
+  const streakElement = document.getElementById("realStreak");
 
-  const scoreElement =
-    document.getElementById("realScore");
+  const startOverlay = document.getElementById("realStart");
+  const gameOverOverlay = document.getElementById("realGameOver");
+  const winOverlay = document.getElementById("realWin");
 
-  const streakElement =
-    document.getElementById("realStreak");
+  const finalScore = document.getElementById("realFinalScore");
+  const winScore = document.getElementById("realWinScore");
 
-  const startOverlay =
-    document.getElementById("realStart");
+  const success = document.getElementById("realSuccess");
+  const successText = document.getElementById("realSuccessText");
 
-  const gameOverOverlay =
-    document.getElementById("realGameOver");
-
-  const winOverlay =
-    document.getElementById("realWin");
-
-  const finalScore =
-    document.getElementById("realFinalScore");
-
-  const winScore =
-    document.getElementById("realWinScore");
-
-  const success =
-    document.getElementById("realSuccess");
-
-  const successText =
-    document.getElementById("realSuccessText");
-
-  const bucket =
-    document.querySelector(".cnc-real-bucket-wrap");
+  const bucket = document.querySelector(".cnc-real-bucket-wrap");
 
 
   /* =========================================================
-     GAME STATE
+     GAME VARIABLES
      ========================================================= */
 
   let score = 0;
-
   let streak = 0;
 
   let targetIndex = 0;
 
   let running = false;
 
-  let round = 0;
-
-  let targetTimer = null;
+  let gameRound = 0;
 
   let decoyTimer = null;
 
@@ -6524,29 +6508,27 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
 
   /* =========================================================
-     RANDOM
+     RANDOM NUMBER
      ========================================================= */
 
   function random(max) {
-
     return Math.floor(Math.random() * max);
-
   }
 
 
   /* =========================================================
-     TARGET
+     CHOOSE TARGET
      ========================================================= */
 
   function chooseTarget() {
 
     targetIndex = random(foods.length);
 
-    target.textContent =
+    const name =
       foods[targetIndex].name.toUpperCase();
 
-    targetSign.textContent =
-      foods[targetIndex].name.toUpperCase();
+    target.textContent = name;
+    targetSign.textContent = name;
 
   }
 
@@ -6559,45 +6541,37 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
     const width = stage.clientWidth;
 
-    const mobile =
+    const isMobile =
       window.innerWidth <= 760;
 
     const itemWidth =
-      mobile ? 80 : 105;
+      isMobile ? 80 : 105;
 
-    let minX =
+    const minX =
       itemWidth / 2 + 8;
 
-    let maxX =
+    const maxX =
       width - itemWidth / 2 - 8;
-
-    /*
-       Keep food away from the extreme edges.
-    */
 
     const x =
       minX +
       Math.random() * (maxX - minX);
 
-    /*
-       Food appears in different heights,
-       making the bucket look like it has
-       several random pop-out positions.
-    */
 
     const minY =
-      mobile ? 125 : 145;
+      isMobile ? 125 : 145;
 
     const maxY =
-      mobile ? 295 : 355;
+      isMobile ? 295 : 355;
 
     const y =
       minY +
       Math.random() * (maxY - minY);
 
+
     return {
-      x,
-      y
+      x: x,
+      y: y
     };
 
   }
@@ -6611,11 +6585,15 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
     if (!running) return;
 
+
     const food =
       foods[index];
 
-    const pos =
+    const position =
       randomPosition();
+
+
+    /* Create button */
 
     const button =
       document.createElement("button");
@@ -6629,24 +6607,39 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       index;
 
     button.style.left =
-      pos.x + "px";
+      position.x + "px";
 
     button.style.top =
-      pos.y + "px";
+      position.y + "px";
 
 
-    const img =
+    /* Add target class */
+
+    if (isTarget) {
+
+      button.classList.add(
+        "target-food"
+      );
+
+    }
+
+
+    /* Food image */
+
+    const image =
       document.createElement("img");
 
-    img.src =
+    image.src =
       food.image;
 
-    img.alt =
+    image.alt =
       food.name;
 
-    img.draggable =
+    image.draggable =
       false;
 
+
+    /* Food name */
 
     const name =
       document.createElement("span");
@@ -6658,8 +6651,7 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       food.name;
 
 
-    button.appendChild(img);
-
+    button.appendChild(image);
     button.appendChild(name);
 
     stage.appendChild(button);
@@ -6667,13 +6659,17 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
     activeFoods.push(button);
 
 
+    /* Show food smoothly */
+
     requestAnimationFrame(function () {
 
       requestAnimationFrame(function () {
 
         if (button.isConnected) {
 
-          button.classList.add("visible");
+          button.classList.add(
+            "visible"
+          );
 
         }
 
@@ -6682,34 +6678,67 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
     });
 
 
-    /*
-       Target stays a little longer than decoys.
-    */
+    /* =====================================================
+       HOW LONG FOOD STAYS
+       ===================================================== */
 
     const lifetime =
       isTarget
-        ? 4000
-        : 2200 + Math.random() * 600;
+        ? TARGET_TIME
+        : DECOY_TIME;
 
+
+    /* =====================================================
+       FOOD DISAPPEARS
+       ===================================================== */
 
     setTimeout(function () {
 
       if (!button.isConnected)
         return;
 
-      button.classList.remove("visible");
 
-      button.classList.add("leaving");
+      button.classList.remove(
+        "visible"
+      );
+
+      button.classList.add(
+        "leaving"
+      );
 
 
       setTimeout(function () {
 
         removeFood(button);
 
+
+        /*
+          IMPORTANT:
+
+          If the TARGET was missed,
+          automatically show the same target again.
+        */
+
+        if (
+          isTarget &&
+          running
+        ) {
+
+          createFood(
+            targetIndex,
+            true
+          );
+
+        }
+
       }, 220);
 
     }, lifetime);
 
+
+    /* =====================================================
+       CLICK FOOD
+       ===================================================== */
 
     button.addEventListener(
       "click",
@@ -6732,17 +6761,19 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
   function removeFood(button) {
 
-    const position =
+    const index =
       activeFoods.indexOf(button);
 
-    if (position !== -1) {
+
+    if (index !== -1) {
 
       activeFoods.splice(
-        position,
+        index,
         1
       );
 
     }
+
 
     if (
       button &&
@@ -6759,7 +6790,7 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
 
   /* =========================================================
-     CLEAR
+     REMOVE ALL FOODS
      ========================================================= */
 
   function clearFoods() {
@@ -6781,13 +6812,14 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       }
     );
 
+
     activeFoods = [];
 
   }
 
 
   /* =========================================================
-     TARGET SPAWN
+     START TARGET
      ========================================================= */
 
   function spawnTarget() {
@@ -6795,7 +6827,23 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
     if (!running)
       return;
 
-    clearTimeout(targetTimer);
+
+    /*
+      Remove any old target first.
+    */
+
+    document
+      .querySelectorAll(
+        ".cnc-real-food.target-food"
+      )
+      .forEach(
+        function (food) {
+
+          removeFood(food);
+
+        }
+      );
+
 
     createFood(
       targetIndex,
@@ -6806,7 +6854,7 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
 
   /* =========================================================
-     DECOY
+     CREATE WRONG / DECOY FOOD
      ========================================================= */
 
   function spawnDecoy() {
@@ -6814,9 +6862,15 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
     if (!running)
       return;
 
+
     let index =
       random(foods.length);
 
+
+    /*
+      Never use the current target
+      as a decoy.
+    */
 
     while (
       index === targetIndex
@@ -6837,7 +6891,7 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
 
   /* =========================================================
-     CLICK
+     FOOD CLICK
      ========================================================= */
 
   function clickFood(
@@ -6849,20 +6903,23 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       return;
 
 
+    /*
+      Prevent double clicking.
+    */
+
     button.style.pointerEvents =
       "none";
 
 
-    /* =====================================
+    /* =====================================================
        CORRECT FOOD
-       ===================================== */
+       ===================================================== */
 
     if (
       index === targetIndex
     ) {
 
       score++;
-
       streak++;
 
 
@@ -6881,10 +6938,9 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       bucketBounce();
 
 
-      /*
-         WIN AFTER ALL 17
-         ==================================
-      */
+      /* ===================================================
+         WIN
+         =================================================== */
 
       if (
         score >= foods.length
@@ -6900,16 +6956,17 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       }
 
 
-      clearTimeout(
-        targetTimer
-      );
-
+      /*
+        Remove current foods
+        and choose another target.
+      */
 
       setTimeout(
         function () {
 
           if (!running)
             return;
+
 
           clearFoods();
 
@@ -6918,15 +6975,15 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
           spawnTarget();
 
         },
-        250
+        300
       );
 
     }
 
 
-    /* =====================================
+    /* =====================================================
        WRONG FOOD
-       ===================================== */
+       ===================================================== */
 
     else {
 
@@ -6935,9 +6992,11 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       streakElement.textContent =
         "0";
 
+
       button.classList.add(
         "wrong"
       );
+
 
       setTimeout(
         showGameOver,
@@ -6950,21 +7009,26 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
 
   /* =========================================================
-     SUCCESS
+     SUCCESS MESSAGE
      ========================================================= */
 
-  function showSuccess(
-    name
-  ) {
+  function showSuccess(name) {
 
     successText.textContent =
       name + " grabbed!";
+
 
     success.classList.remove(
       "show"
     );
 
+
+    /*
+      Restart animation.
+    */
+
     void success.offsetWidth;
+
 
     success.classList.add(
       "show"
@@ -6983,7 +7047,9 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       "bounce"
     );
 
+
     void bucket.offsetWidth;
+
 
     bucket.classList.add(
       "bounce"
@@ -6993,20 +7059,24 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
 
   /* =========================================================
-     START LOOPS
+     DECOY LOOP
      ========================================================= */
 
   function startLoops() {
 
-    const currentRound =
-      round;
+    const thisRound =
+      gameRound;
 
 
     function loop() {
 
+      /*
+        Stop old loops.
+      */
+
       if (
         !running ||
-        currentRound !== round
+        thisRound !== gameRound
       ) {
 
         return;
@@ -7020,12 +7090,15 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
       decoyTimer =
         setTimeout(
           loop,
-          520 +
-          Math.random() * 400
+          DECOY_DELAY
         );
 
     }
 
+
+    /*
+      First decoy appears after 1 second.
+    */
 
     decoyTimer =
       setTimeout(
@@ -7042,23 +7115,20 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
   function startGame() {
 
-    round++;
+    gameRound++;
 
     running = true;
 
-    clearTimeout(
-      targetTimer
-    );
 
     clearTimeout(
       decoyTimer
     );
 
+
     clearFoods();
 
 
     score = 0;
-
     streak = 0;
 
 
@@ -7082,9 +7152,23 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
     );
 
 
+    /*
+      Choose first target.
+    */
+
     chooseTarget();
 
+
+    /*
+      Show target.
+    */
+
     spawnTarget();
+
+
+    /*
+      Start decoys.
+    */
 
     startLoops();
 
@@ -7099,20 +7183,20 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
     running = false;
 
-    round++;
+    gameRound++;
 
-    clearTimeout(
-      targetTimer
-    );
 
     clearTimeout(
       decoyTimer
     );
 
+
     clearFoods();
+
 
     finalScore.textContent =
       score;
+
 
     gameOverOverlay.classList.add(
       "show"
@@ -7129,20 +7213,20 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
     running = false;
 
-    round++;
+    gameRound++;
 
-    clearTimeout(
-      targetTimer
-    );
 
     clearTimeout(
       decoyTimer
     );
 
+
     clearFoods();
+
 
     winScore.textContent =
       score;
+
 
     winOverlay.classList.add(
       "show"
@@ -7187,9 +7271,9 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
     );
 
 
-  /*
-     Change this URL to your actual menu/order page.
-  */
+  /* =========================================================
+     ORDER BUTTON
+     ========================================================= */
 
   document
     .getElementById("realOrderBtn")
@@ -7205,12 +7289,13 @@ Top-notch pizzas, burgers, kebabs and curries made with premium ingredients and 
 
 
   /* =========================================================
-     INITIAL SCREEN
+     SHOW START SCREEN
      ========================================================= */
 
   startOverlay.classList.add(
     "show"
   );
+
 
 })();
 </script>
